@@ -85,7 +85,7 @@ public class JoinCommand implements ICommand {
                     }
                 }, 0, sleep, TimeUnit.MILLISECONDS);
             } catch (IllegalArgumentException e) {
-                e.printStackTrace();
+                e.fillInStackTrace();
             }
         }
     }

@@ -12,6 +12,9 @@ public class KickCommand implements ICommand {
     public void handle(@NotNull SlashCommandInteractionEvent event) {
         OptionMapping opt = event.getOption("유저");
         OptionMapping opt2 = event.getOption("사유");
+        if(event.getGuild() == null) {
+            event.reply("에러가 발생했습니다. 에러코드: event.getGuild() is null from KickCommand:21").queue();
+        }
         if(opt == null) {
             return;
         }

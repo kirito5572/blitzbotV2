@@ -18,7 +18,6 @@ import org.slf4j.LoggerFactory;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 
@@ -117,7 +116,7 @@ public class OnReadyListener extends ListenerAdapter {
             messageCheckingModule(inputGameNewsChannel, outputGameNewsChannel);
             messageCheckingModule(inputWorkOnProgressChannel, outputWorkOnProgressChannel);
         } catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
+            e.fillInStackTrace();
         }
 
     }
@@ -139,7 +138,7 @@ public class OnReadyListener extends ListenerAdapter {
         if(!isLastMessageModule(input.getId(), input.getLatestMessageId())) {
             Message message = input.getIterableHistory()
                     .takeAsync(1)
-                    .get().get(0);
+                    .get().getFirst();
             String inputMessage = message.getContentDisplay();
             List<Message.Attachment> attachments = message.getAttachments();
             List<FileUpload> downloadFile = new ArrayList<>();
@@ -150,13 +149,13 @@ public class OnReadyListener extends ListenerAdapter {
                 }
             }
 
-            MessageCreateAction messageCreateAction = null;
+            MessageCreateAction messageCreateAction;
             if(inputMessage.length() > 1) {
                 String outputMessage = googleAPI.googleTranslateModule(inputMessage, input.getGuild());
                 messageCreateAction = output.sendMessage(input.getName() + "\n" + outputMessage);
-                messageCreateAction = messageCreateAction.addFiles(downloadFile);
+                messageCreateAction.addFiles(downloadFile);
             } else {
-                messageCreateAction = output.sendFiles(downloadFile);
+                output.sendFiles(downloadFile);
             }
             message.delete().queue();
         }

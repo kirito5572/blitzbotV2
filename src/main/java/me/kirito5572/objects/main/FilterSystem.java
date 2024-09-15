@@ -41,7 +41,7 @@ public class FilterSystem {
         } catch (SQLException sqlException) {
             logger.error(sqlException.getMessage());
             logger.error(sqlException.getSQLState());
-            sqlException.printStackTrace();
+            sqlException.fillInStackTrace();
         }
         return isRefreshEnd;
     }
@@ -68,7 +68,7 @@ public class FilterSystem {
         } catch (SQLException sqlException) {
             logger.error(sqlException.getMessage());
             logger.error(sqlException.getSQLState());
-            sqlException.printStackTrace();
+            sqlException.fillInStackTrace();
         }
 
         return isRefreshEnd;
@@ -104,7 +104,7 @@ public class FilterSystem {
         }
     }
 
-    public boolean commandAuthorityCheck(SlashCommandInteractionEvent event, boolean isWhiteList) {
+    public boolean commandAuthorityCheck(SlashCommandInteractionEvent event) {
         Member member = event.getMember();
         assert member != null;
         Guild guild = event.getGuild();

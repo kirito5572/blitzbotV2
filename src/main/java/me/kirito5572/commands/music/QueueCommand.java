@@ -76,7 +76,7 @@ public class QueueCommand implements ICommand {
                     ));
 
                 } catch (IndexOutOfBoundsException e) {
-                    e.printStackTrace();
+                    e.fillInStackTrace();
                     break;
                 }
             }

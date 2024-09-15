@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.Objects;
 
 public class FilterWordRemoveCommand implements ICommand {
-    private final Logger logger = LoggerFactory.getLogger(FilterWordAddCommand.class);
+    private final Logger logger = LoggerFactory.getLogger(FilterWordRemoveCommand.class);
     private final FilterSystem filterSystem;
 
     public FilterWordRemoveCommand(FilterSystem filterSystem) {
@@ -26,7 +26,7 @@ public class FilterWordRemoveCommand implements ICommand {
             if(opt == null) {
                 return;
             }
-            boolean isSuccess = filterSystem.commandAuthorityCheck(event, false);
+            boolean isSuccess = filterSystem.commandAuthorityCheck(event);
             if(isSuccess) {
                 try {
                     filterSystem.wordUpdate(false, false, new String[]{opt.getAsString()});

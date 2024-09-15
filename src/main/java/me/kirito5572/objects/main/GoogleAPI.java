@@ -58,16 +58,16 @@ public class GoogleAPI {
                     returns[i][1] = items.get(i).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
                 }
             } catch (Exception e) {
-                logger.error("youtube api error");
+                logger.error("youtube api error(parse data)");
                 logger.info(e.getMessage());
-                e.printStackTrace();
+                e.fillInStackTrace();
             }
             return returns;
 
         } catch (IOException | URISyntaxException e) {
-            logger.error("youtube api error");
+            logger.error("youtube api error(get data)");
             logger.info(e.getMessage());
-            e.printStackTrace();
+            e.fillInStackTrace();
         }
         return null;
     }

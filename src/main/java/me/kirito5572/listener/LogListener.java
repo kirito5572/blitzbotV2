@@ -1,17 +1,9 @@
 package me.kirito5572.listener;
 
-import com.amazonaws.SdkClientException;
-import com.amazonaws.auth.EnvironmentVariableCredentialsProvider;
-import com.amazonaws.regions.Regions;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-import com.amazonaws.services.s3.model.*;
 import me.duncte123.botcommons.messaging.EmbedUtils;
 import me.kirito5572.objects.main.MySqlConnector;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.*;
-import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
-import net.dv8tion.jda.api.entities.channel.concrete.ThreadChannel;
 import net.dv8tion.jda.api.entities.channel.unions.AudioChannelUnion;
 import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.entities.sticker.Sticker;
@@ -40,24 +32,30 @@ import net.dv8tion.jda.api.events.sticker.update.GuildStickerUpdateNameEvent;
 import net.dv8tion.jda.api.events.sticker.update.GuildStickerUpdateTagsEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.utils.FileUpload;
+import org.apache.commons.io.FilenameUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider;
+import software.amazon.awssdk.core.exception.SdkClientException;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.GetObjectRequest;
+import software.amazon.awssdk.services.s3.model.HeadObjectRequest;
+import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 
 import java.awt.*;
 import java.io.*;
-import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
+import java.util.*;
 import java.util.List;
-import java.util.Objects;
-import java.util.Set;
 import java.util.concurrent.CancellationException;
 
 
@@ -76,7 +74,7 @@ public class LogListener extends ListenerAdapter {
             mySqlConnector.reConnection();
         } catch (SQLException e) {
             logger.error("SQL reConnection FAIL");
-            e.printStackTrace();
+            e.fillInStackTrace();
         }
 
     }
@@ -228,20 +226,21 @@ public class LogListener extends ListenerAdapter {
             } else {
                 embedBuilder.addField("데이터 없음", "데이터 없음", false);
             }
+            File file = null;
             embedBuilder.addField("삭제 시간", timeFormat.format(time), false);
             if(isFile) {
-                try {
-                    File file = S3DownloadObject(event.getMessageId() + "_" + 1);
-                    if(file != null) {
-                        Objects.requireNonNull(event.getGuild().getTextChannelById("829023428019355688")).sendFiles(FileUpload.fromData(file)).queue();
-                    }
-                } catch (AmazonS3Exception s3Exception) {
-                    logger.info("객체에 없는 파일을 요청했습니다.");
-                    embedBuilder.appendDescription("이미지가 포함된 글이나 이미지가 존재하지 않습니다(30일 이상 경과 or 업로드 안된 파일)");
-                }
+                 file = S3DownloadObject(event.getMessageId() + "_" + 1);
+                Objects.requireNonNull(event.getGuild().getTextChannelById("829023428019355688")).sendFiles(FileUpload.fromData(file)).queue();
             }
             Objects.requireNonNull(event.getGuild().getTextChannelById("829023428019355688")).sendMessageEmbeds(embedBuilder.build()).queue();
             mySqlConnector.Insert_Query("DELETE FROM blitz_bot.ChattingDataTable WHERE messageId=?", new int[] {mySqlConnector.STRING}, new String[] {event.getMessageId()});
+            if(file !=null) {
+                if (file.exists()) {
+                    if (!file.delete()) {
+                        logger.error("파일 삭제 실패");
+                    }
+                }
+            }
 
         } catch (SQLException e) {
             logger.error(e.getMessage());
@@ -315,8 +314,8 @@ public class LogListener extends ListenerAdapter {
         if(!event.getGuild().getId().equals("826704284003205160")) {
             return;
         }
-        Date date = new Date();
         Member member = event.getMember();
+        Date date = new Date();
         List<Role> roleList = event.getRoles();
         StringBuilder roleData = new StringBuilder();
         for (Role role : roleList) {
@@ -335,7 +334,6 @@ public class LogListener extends ListenerAdapter {
 
     @Override
     public void onGuildMemberUpdateNickname(@NotNull GuildMemberUpdateNicknameEvent event) {
-        Guild guild = event.getGuild();
         Date date = new Date();
         String nickName = event.getOldNickname();
         if (nickName == null) {
@@ -639,8 +637,10 @@ public class LogListener extends ListenerAdapter {
 
     }
 
-    private static final Regions clientRegion = Regions.AP_NORTHEAST_2;
+    private static final Region clientRegion = Region.AP_NORTHEAST_2;
     private static final String bucketName = "blitzbot-logger";
+
+
     /**
      * upload file to bot s3 cloud
      *
@@ -648,17 +648,22 @@ public class LogListener extends ListenerAdapter {
      * @param messageId message id of the file to be uploaded
      */
 
-    private void S3UploadObject(@NotNull File file, @NotNull String messageId) throws SdkClientException{
-        AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
-                .withRegion(clientRegion)
-                .withCredentials(new EnvironmentVariableCredentialsProvider())
+    private void S3UploadObject(@NotNull File file, @NotNull String messageId) throws SdkClientException {
+        S3Client s3Client = S3Client.builder()
+                .credentialsProvider(DefaultCredentialsProvider.create())
+                .region(clientRegion)
                 .build();
 
-        PutObjectRequest request = new PutObjectRequest(bucketName, messageId, file);
-        ObjectMetadata metadata = new ObjectMetadata();
-        request.setMetadata(metadata);
-        request.setStorageClass(StorageClass.StandardInfrequentAccess);
-        s3Client.putObject(request);
+        Map<String, String> metadata = new HashMap<>();
+        metadata.put("extension", FilenameUtils.getExtension(file.getName()));
+
+        PutObjectRequest putObjectRequest = PutObjectRequest.builder()
+                .bucket(bucketName)
+                .key(messageId)
+                .metadata(metadata)
+                .build();
+
+        s3Client.putObject(putObjectRequest, file.toPath());
     }
 
     /**
@@ -669,31 +674,23 @@ public class LogListener extends ListenerAdapter {
      * @return download {@link File} or null(If the file does not exist)
      */
 
-    private File S3DownloadObject(@NotNull String messageId){
-        AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
-                .withRegion(clientRegion)
-                .withCredentials(new EnvironmentVariableCredentialsProvider())
+    private File S3DownloadObject(@NotNull String messageId) {
+        S3Client s3Client = S3Client.builder()
+                .credentialsProvider(DefaultCredentialsProvider.create())
+                .region(clientRegion)
                 .build();
-
-        GetObjectRequest request = new GetObjectRequest(bucketName, messageId);
-        S3Object object = s3Client.getObject(request);
-        ObjectMetadata metadata = object.getObjectMetadata();
-        InputStream inputStream = object.getObjectContent();
+        GetObjectRequest getObjectRequest = GetObjectRequest.builder()
+                .bucket(bucketName)
+                .key(messageId)
+                .build();
         Path path;
-        try {
-            path = Files.createTempFile(messageId, "." + metadata.getContentType().split("/")[1]);
-        } catch (IOException e) {
-            return null;
-        }
-        try(FileOutputStream out = new FileOutputStream(path.toFile())) {
-            byte[] buffer = new byte[1024];
-            int len;
-            while ((len = inputStream.read(buffer)) != -1) {
-                out.write(buffer, 0, len);
-            }
-        } catch (IOException e) {
-            return null;
-        }
+        HeadObjectRequest objectRequest = HeadObjectRequest.builder()
+                .key(messageId)
+                .bucket(bucketName)
+                .build();
+        String type = s3Client.headObject(objectRequest).contentType();
+        path = Paths.get(messageId + "." + type.split("/")[1]);
+        s3Client.getObject(getObjectRequest, path);
         return path.toFile();
     }
 

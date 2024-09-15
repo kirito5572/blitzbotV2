@@ -24,7 +24,6 @@ import java.util.jar.JarFile;
 public class App {
     private final static Logger logger = LoggerFactory.getLogger(App.class);
 
-    private static String PREFIX;
     public final static int APP_STABLE = 0;
     public final static int APP_BETA = 1;
     public  final static int APP_ALPHA = 2;
@@ -65,15 +64,7 @@ public class App {
     public static @NotNull String openFileData(@NotNull String Data) {
         StringBuilder reader = new StringBuilder();
         try {
-            String sep = File.separator;
-            String path;
-            path = switch (OS) {
-                case WINDOWS -> "C:" + sep + "DiscordServerBotSecrets" + sep + "blitz_bot" + sep + Data + ".txt";
-                case MAC -> sep + "etc" + sep + "DiscordServerBotSecrets" + sep + "blitz_bot" + sep + Data + ".txt";
-                case UNIX -> sep + "home" + sep + "DiscordServerBotSecrets" + sep + "blitz_bot" + sep + Data + ".txt";
-                default -> throw new UnsupportedOSException("이 운영체제는 지원하지 않습니다.");
-            };
-            File file = new File(path);
+            File file = getFile(Data);
             try(FileReader fileReader = new FileReader(file)) {
                 int signalCh;
                 while ((signalCh = fileReader.read()) != -1) {
@@ -81,10 +72,23 @@ public class App {
                 }
             }
         } catch (Exception e) {
-            logger.error("예외 발생:\n" + e);
+            logger.error("예외 발생:\n{}", String.valueOf(e));
             System.exit(-1);
         }
         return reader.toString();
+    }
+
+    @NotNull
+    private static File getFile(@NotNull String Data) throws UnsupportedOSException {
+        String sep = File.separator;
+        String path;
+        path = switch (OS) {
+            case WINDOWS -> "C:" + sep + "DiscordServerBotSecrets" + sep + "blitz_bot" + sep + Data + ".txt";
+            case MAC -> sep + "etc" + sep + "DiscordServerBotSecrets" + sep + "blitz_bot" + sep + Data + ".txt";
+            case UNIX -> sep + "home" + sep + "DiscordServerBotSecrets" + sep + "blitz_bot" + sep + Data + ".txt";
+            default -> throw new UnsupportedOSException("이 운영체제는 지원하지 않습니다.");
+        };
+        return new File(path);
     }
 
     public App() throws SQLException, ClassNotFoundException {
@@ -98,7 +102,7 @@ public class App {
         } else {
             OS = UNSUPPORTED;
         }
-        logger.info("OS: " + OSStringData);
+        logger.info("OS: {}", OSStringData);
 
         try {
             String location = new File(getClass().getProtectionDomain().getCodeSource().getLocation()
@@ -118,16 +122,13 @@ public class App {
         }
         if(getVersion().contains("STABLE") || getVersion().contains("stable")) {
             appMode = APP_STABLE;
-            PREFIX = "!";
-            logger.info("program version: " + getVersion());
+            logger.info("program version: {}", getVersion());
         } else if(getVersion().contains("BETA") || getVersion().contains("beta")) {
             appMode = APP_BETA;
-            PREFIX = "#";
-            logger.warn("beta program version: " + getVersion());
+            logger.warn("beta program version: {}", getVersion());
         } else if(getVersion().contains("ALPHA") || getVersion().contains("alpha")) {
             appMode = APP_ALPHA;
-            PREFIX = "#";
-            logger.error("alpha program version: " + getVersion());
+            logger.error("alpha program version: {}", getVersion());
         } else {
             logger.error("unknown program version, shutdown program");
             System.exit(-1);
@@ -166,7 +167,7 @@ public class App {
             jda.addEventListener(listener);
             logger.info("연결 완료. 부팅 완료");
         } catch (@NotNull InterruptedException e) {
-            logger.error("의도치 않은 예외 발생" + e);
+            logger.error("의도치 않은 예외 발생{}", String.valueOf(e));
         }
         
         //TODO Exception in thread "Timer-2" java.lang.NullPointerException: Cannot invoke "com.google.gson.JsonElement.getAsJsonObject()" because the return value of "com.google.gson.JsonObject.get(String)" is null
@@ -177,17 +178,9 @@ public class App {
     }
 
     @SuppressWarnings("InstantiationOfUtilityClass")
-    public static void main(String[] args) throws SQLException, ClassNotFoundException, URISyntaxException {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
         date = new Date();
         new App();
-    }
-
-    /**
-     * return prefix
-     * @return the prefix of this discord bot
-     */
-    public static String getPREFIX() {
-        return PREFIX;
     }
 
     /**
@@ -234,15 +227,6 @@ public class App {
 
     public static Date getDate() {
         return date;
-    }
-
-    /**
-     * return moderator discord id list
-     * @return the string array that moderator discord id
-     */
-
-    public static String [] getModerator() {
-        return moderator;
     }
 
 }

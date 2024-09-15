@@ -61,7 +61,7 @@ public class PlayerManager {
                 AudioTrack firstTrack = playlist.getSelectedTrack();
 
                 if (firstTrack == null) {
-                    firstTrack = playlist.getTracks().remove(0);
+                    firstTrack = playlist.getTracks().removeFirst();
                 }
 
                 event.getHook().editOriginal("재생목록에 추가:" + firstTrack.getInfo().title +

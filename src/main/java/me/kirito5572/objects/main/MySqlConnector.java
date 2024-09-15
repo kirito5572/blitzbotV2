@@ -53,13 +53,6 @@ public class MySqlConnector {
      * @throws SQLException if a database access error occurs
      */
 
-    /**
-     * check SQL Connection is closed
-     * @return {@code true} if this {@code Connection} object
-     *      is closed; {@code false} if it is still open
-     * @throws SQLException if a database access error occurs
-     */
-
     public boolean isConnectionClosed() throws SQLException {
         return connection.isClosed();
     }
@@ -115,17 +108,16 @@ public class MySqlConnector {
 
     /**
      * insert query to sql server
-     * @param Query sql query
+     *
+     * @param Query    sql query
      * @param dataType the data types that input
-     * @param data the data that input
-     * @return 1 = success, 0 = failed
+     * @param data     the data that input
      * @throws SQLException if query execution fail or database access error occurs
      */
-    public int Insert_Query(@Language("MySQL") String Query, int[] dataType, String[] data) throws SQLException {
+    public void Insert_Query(@Language("MySQL") String Query, int[] dataType, String[] data) throws SQLException {
         PreparedStatement statement = connection.prepareStatement(Query);
         Query(statement, dataType, data);
         boolean isEnd = statement.execute();
         statement.close();
-        return isEnd ? 1 : 0;
     }
 }

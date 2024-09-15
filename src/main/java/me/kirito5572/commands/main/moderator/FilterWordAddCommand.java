@@ -25,7 +25,7 @@ public class FilterWordAddCommand implements ICommand {
             if(opt == null) {
                 return;
             }
-            boolean isSuccess = filterSystem.commandAuthorityCheck(event, false);
+            boolean isSuccess = filterSystem.commandAuthorityCheck(event);
             if(isSuccess) {
                 try {
                     filterSystem.wordUpdate(false, true, new String[]{opt.getAsString()});

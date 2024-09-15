@@ -19,7 +19,7 @@ public class PingCommand implements ICommand {
     }
 
     @Override
-    public void handle(SlashCommandInteractionEvent event) {
+    public void handle(@NotNull SlashCommandInteractionEvent event) {
         long a;
         try {
             a = event.getJDA().getRestPing().submit().get();
