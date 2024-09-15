@@ -1,0 +1,23 @@
+[2024-09-15 16:53:41] [main] [INFO ] me.kirito5572.App - Start up
+[2024-09-15 16:53:41] [main] [INFO ] me.kirito5572.App - OS: windows 11
+[2024-09-15 16:53:41] [main] [ERROR] me.kirito5572.App - alpha program version: alpha version
+[2024-09-15 16:53:41] [main] [INFO ] me.kirito5572.App - 기본 정보 로딩됨, SQL 서버에 접속 시도...
+[2024-09-15 16:54:24] [main] [INFO ] me.kirito5572.App - Start up
+[2024-09-15 16:54:24] [main] [INFO ] me.kirito5572.App - OS: windows 11
+[2024-09-15 16:54:24] [main] [ERROR] me.kirito5572.App - alpha program version: alpha version
+[2024-09-15 16:54:24] [main] [INFO ] me.kirito5572.App - 기본 정보 로딩됨, SQL 서버에 접속 시도...
+[2024-09-15 16:54:24] [main] [INFO ] me.kirito5572.App - SQL 서버 연결 성공, API 서비스 접속중...
+[2024-09-15 16:54:24] [main] [INFO ] me.kirito5572.App - API 서비스 접속 성공, 봇 시작중... 각 기능부 실행
+[2024-09-15 16:54:24] [main] [INFO ] me.kirito5572.App - 디스코드 서버와 연결 준비 완료, 접속 시도중...
+[2024-09-15 16:54:25] [main] [INFO ] net.dv8tion.jda.api.JDA - Login Successful!
+[2024-09-15 16:54:25] [JDA MainWS-WriteThread] [INFO ] n.d.j.i.requests.WebSocketClient - Connected to WebSocket
+[2024-09-15 16:54:26] [JDA MainWS-ReadThread] [INFO ] net.dv8tion.jda.api.JDA - Finished Loading!
+[2024-09-15 16:54:26] [JDA MainWS-ReadThread] [INFO ] m.k.listener.OnReadyListener - 자동화 처리부 시작 완료
+[2024-09-15 16:54:26] [JDA MainWS-ReadThread] [INFO ] m.kirito5572.listener.EventListener - 이벤트 처리부 시작 완료
+[2024-09-15 16:54:26] [JDA MainWS-ReadThread] [INFO ] m.k.l.EmoteClickGiveRoleListener - 규칙 동의 처리부 시작 완료
+[2024-09-15 16:54:26] [JDA MainWS-ReadThread] [INFO ] m.k.listener.FilterListener -  필터 기능부 준비 완료
+[2024-09-15 16:54:26] [JDA MainWS-ReadThread] [INFO ] m.k.listener.MessagePinListener -  메세지 고정 기능부 준비 완료
+[2024-09-15 16:54:26] [main] [INFO ] me.kirito5572.App - 서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
+[2024-09-15 16:54:26] [main] [INFO ] m.k.objects.main.CommandManager - 명령어 로딩중
+[2024-09-15 16:54:26] [main] [INFO ] m.k.objects.main.CommandManager - 명령어 셋팅 완료
+[2024-09-15 16:54:26] [main] [INFO ] me.kirito5572.App - 연결 완료. 부팅 완료
