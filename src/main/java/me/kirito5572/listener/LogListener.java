@@ -648,22 +648,22 @@ public class LogListener extends ListenerAdapter {
      * @param messageId message id of the file to be uploaded
      */
 
-    private void S3UploadObject(@NotNull File file, @NotNull String messageId) throws SdkClientException {
-        S3Client s3Client = S3Client.builder()
+    private void S3UploadObject(@NotNull File file, @NotNull String messageId) {
+        try(S3Client s3Client = S3Client.builder()
                 .credentialsProvider(DefaultCredentialsProvider.create())
                 .region(clientRegion)
-                .build();
+                .build()){
+            Map<String, String> metadata = new HashMap<>();
+            metadata.put("extension", FilenameUtils.getExtension(file.getName()));
 
-        Map<String, String> metadata = new HashMap<>();
-        metadata.put("extension", FilenameUtils.getExtension(file.getName()));
+            PutObjectRequest putObjectRequest = PutObjectRequest.builder()
+                    .bucket(bucketName)
+                    .key(messageId)
+                    .metadata(metadata)
+                    .build();
 
-        PutObjectRequest putObjectRequest = PutObjectRequest.builder()
-                .bucket(bucketName)
-                .key(messageId)
-                .metadata(metadata)
-                .build();
-
-        s3Client.putObject(putObjectRequest, file.toPath());
+            s3Client.putObject(putObjectRequest, file.toPath());
+        }
     }
 
     /**
@@ -675,23 +675,24 @@ public class LogListener extends ListenerAdapter {
      */
 
     private File S3DownloadObject(@NotNull String messageId) {
-        S3Client s3Client = S3Client.builder()
+        try(S3Client s3Client = S3Client.builder()
                 .credentialsProvider(DefaultCredentialsProvider.create())
                 .region(clientRegion)
-                .build();
-        GetObjectRequest getObjectRequest = GetObjectRequest.builder()
-                .bucket(bucketName)
-                .key(messageId)
-                .build();
-        Path path;
-        HeadObjectRequest objectRequest = HeadObjectRequest.builder()
-                .key(messageId)
-                .bucket(bucketName)
-                .build();
-        String type = s3Client.headObject(objectRequest).contentType();
-        path = Paths.get(messageId + "." + type.split("/")[1]);
-        s3Client.getObject(getObjectRequest, path);
-        return path.toFile();
+                .build()) {
+            GetObjectRequest getObjectRequest = GetObjectRequest.builder()
+                    .bucket(bucketName)
+                    .key(messageId)
+                    .build();
+            Path path;
+            HeadObjectRequest objectRequest = HeadObjectRequest.builder()
+                    .key(messageId)
+                    .bucket(bucketName)
+                    .build();
+            String type = s3Client.headObject(objectRequest).contentType();
+            path = Paths.get(messageId + "." + type.split("/")[1]);
+            s3Client.getObject(getObjectRequest, path);
+            return path.toFile();
+        }
     }
 
     /**
