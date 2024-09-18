@@ -52,6 +52,7 @@ public class OnReadyListener extends ListenerAdapter {
                 @Override
                 public void run() {
                     giveRoleListenerModule();
+                    autoTranslationDetector(event);
                     i[0]++;
                     if(i[0] > 21600) {
                         i[0] = 0;
