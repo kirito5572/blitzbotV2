@@ -6,7 +6,7 @@ plugins ({
     id'com.gradleup.shadow' version '8.3.1'
 })
 group 'me.kirito5572'
-version '0.4.3_beta'
+version '0.4.2.2_stable'
 
 mainClassName = 'me.kirito5572.App'
 

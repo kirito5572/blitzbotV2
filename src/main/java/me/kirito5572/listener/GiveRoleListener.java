@@ -8,6 +8,7 @@ import net.dv8tion.jda.api.entities.UserSnowflake;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberRemoveEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionRemoveEvent;
+import net.dv8tion.jda.api.events.session.ReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -29,6 +30,11 @@ public class GiveRoleListener extends ListenerAdapter {
     }
 
     @Override
+    public void onReady(@NotNull ReadyEvent event) {
+        logger.info("역할 지급 기능부 준비 완료");
+    }
+
+    @Override
     public void onMessageReactionAdd(@NotNull MessageReactionAddEvent event) {
         if(!event.isFromGuild()) {
             return;
@@ -44,13 +50,7 @@ public class GiveRoleListener extends ListenerAdapter {
         Member member = event.retrieveMember().complete();
         long banTime = isBan(member);
         if(banTime != 0) {
-            long time = banTime * 1000;
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTimeInMillis(time);
-
-            int mYear = calendar.get(Calendar.YEAR), mMonth = calendar.get(Calendar.MONTH) + 1, mDay = calendar.get(Calendar.DAY_OF_MONTH),
-                    mHour = calendar.get(Calendar.HOUR_OF_DAY), mMin = calendar.get(Calendar.MINUTE), mSec = calendar.get(Calendar.SECOND);
-            String Date = mYear + "년 " + mMonth + "월 " + mDay + "일 " + mHour + "시 " + mMin + "분 " + mSec + "초";
+            String Date = getString(banTime);
             member.getUser().openPrivateChannel().flatMap(channel -> channel.sendMessage("현재 쿨타임 중입니다.\n 쿨타임 해제 시간: " + Date)).queue();
             return;
         }
@@ -68,7 +68,7 @@ public class GiveRoleListener extends ListenerAdapter {
             }
         }
         assert role != null;
-        guild.addRoleToMember(member, role).submit();
+        guild.addRoleToMember(UserSnowflake.fromId(member.getId()), role).queue();
         try {
             mySqlConnector.Insert_Query("INSERT INTO blitz_bot.JoinDataTable (userId, approveTime, rejectTime) VALUES(?, ? ,?);",
                     new int[] {mySqlConnector.STRING, mySqlConnector.STRING, mySqlConnector.STRING},
@@ -78,16 +78,28 @@ public class GiveRoleListener extends ListenerAdapter {
         }
     }
 
+    @NotNull
+    private static String getString(long banTime) {
+        long time = banTime * 1000;
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(time);
+
+        int mYear = calendar.get(Calendar.YEAR), mMonth = calendar.get(Calendar.MONTH) + 1, mDay = calendar.get(Calendar.DAY_OF_MONTH),
+                mHour = calendar.get(Calendar.HOUR_OF_DAY), mMin = calendar.get(Calendar.MINUTE), mSec = calendar.get(Calendar.SECOND);
+        String Date = mYear + "년 " + mMonth + "월 " + mDay + "일 " + mHour + "시 " + mMin + "분 " + mSec + "초";
+        return Date;
+    }
+
     @Override
     public void onMessageReactionRemove(@NotNull MessageReactionRemoveEvent event) {
         Guild guild = event.getGuild();
         if (guild.getId().equals("826704284003205160")) {
             if (event.getMessageId().equals(Chatting)) {
             Role role = guild.getRoleById("827207197183180821");
-            Member member = event.getMember();
+            Member member = event.retrieveMember().complete();
                 assert role != null;
                 assert member != null;
-                guild.removeRoleFromMember(member, role).submit();
+                guild.removeRoleFromMember(UserSnowflake.fromId(member.getId()), role).queue();
                 try {
                      mySqlConnector.Insert_Query("UPDATE blitz_bot.JoinDataTable SET rejectTime =? WHERE userId = ? AND rejectTime = ?",
                             new int[] {mySqlConnector.STRING, mySqlConnector.STRING, mySqlConnector.STRING},
@@ -105,7 +117,6 @@ public class GiveRoleListener extends ListenerAdapter {
         if (guild.getId().equals("826704284003205160")) {
             Member member = event.getMember();
             assert member != null;
-            boolean result = true;
             try {
                 mySqlConnector.Insert_Query("UPDATE blitz_bot.JoinDataTable SET rejectTime =? WHERE userId = ? AND rejectTime = ?",
                         new int[]{mySqlConnector.STRING, mySqlConnector.STRING, mySqlConnector.STRING},
@@ -148,7 +159,7 @@ public class GiveRoleListener extends ListenerAdapter {
                     mySqlConnector.Insert_Query("INSERT INTO blitz_bot.GiveRoleBanTable (userId, endTime) VALUES(?,?);",
                             new int[]{mySqlConnector.STRING, mySqlConnector.STRING},
                             new String[]{member.getId(), String.valueOf(end_time)});
-                    return "true/" + check_time[i][0] + "#" + resultSet.getRow();
+                    return "true/" + check_time[i][0] + "#" + check_time[i][1];
                 }
             } catch (SQLException sqlException) {
                 sqlException.printStackTrace();

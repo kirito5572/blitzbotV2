@@ -115,7 +115,7 @@ public class App {
                 build_jdk = attribute.getValue("BuildJDK");
             }
         } catch (@NotNull URISyntaxException | IOException e){
-            version = "alpha version";
+            version = "stable version";
             build_time = "alpha";
             build_os = "windows 11";
             build_jdk = "JAVA 22";

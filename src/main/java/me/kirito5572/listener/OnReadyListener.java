@@ -173,6 +173,7 @@ public class OnReadyListener extends ListenerAdapter {
     private boolean isLastMessageModule(String channelId, String messageId) {
         boolean value = false;
         try(ResultSet rs = mySqlConnector.Select_Query("SELECT * FROM blitz_bot.isLastMessage WHERE channelId = ?", new int[]{mySqlConnector.STRING}, new String[] {channelId})) {
+            rs.next();
             String lastedMessageId =rs.getString("messageId");
             if(lastedMessageId.equals(messageId)) {
                 value = true;
