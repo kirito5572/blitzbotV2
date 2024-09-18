@@ -42,6 +42,31 @@ public class OnReadyListener extends ListenerAdapter {
         } else if(App.appMode == App.APP_STABLE) {
             autoActivityChangeModule(event);
         }
+
+        //이모지 역할 부여 기능의 과다 사용시 밴
+        //밴 됬을 경우 시간 지나면 풀려야 하니 검증
+        final int[] i = {0};
+        try {
+            Timer timer = new Timer();
+            TimerTask task = new TimerTask() {
+                @Override
+                public void run() {
+                    giveRoleListenerModule();
+                    i[0]++;
+                    if(i[0] > 21600) {
+                        i[0] = 0;
+                        try {
+                            mySqlConnector.reConnection();
+                        } catch (SQLException sqlException) {
+                            logger.error(sqlException.getMessage());
+                        }
+                    }
+                }
+            };
+            timer.scheduleAtFixedRate(task, 0, 5000);
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+        }
         logger.info("자동화 처리부 시작 완료");
     }
 
@@ -74,7 +99,7 @@ public class OnReadyListener extends ListenerAdapter {
 
     private void autoTranslationDetector(ReadyEvent event) {
         final String inputGuildId = "665581943382999048";
-        final String outputGuildId = "826704284003205160";
+        final String outputGuildId = "665581943382999048"; //826704284003205160
 
         final String[] inputChannels = new String[] {
                 "1039543294306287687", "827542008112480297", "1039543108888711178"
@@ -104,9 +129,9 @@ public class OnReadyListener extends ListenerAdapter {
             return;
         }
 
-        GuildMessageChannel outputNoticeChannel = outputGuild.getTextChannelById(outputChannels[0]);
-        GuildMessageChannel outputGameNewsChannel = outputGuild.getTextChannelById(outputChannels[1]);
-        GuildMessageChannel outputWorkOnProgressChannel = outputGuild.getTextChannelById(outputChannels[2]);
+        GuildMessageChannel outputNoticeChannel = outputGuild.getTextChannelById(outputChannelsDebugs[0]);
+        GuildMessageChannel outputGameNewsChannel = outputGuild.getTextChannelById(outputChannelsDebugs[1]);
+        GuildMessageChannel outputWorkOnProgressChannel = outputGuild.getTextChannelById(outputChannelsDebugs[2]);
         if(outputNoticeChannel == null || outputGameNewsChannel == null || outputWorkOnProgressChannel == null) {
             return;
         }
@@ -121,6 +146,29 @@ public class OnReadyListener extends ListenerAdapter {
 
     }
 
+    private void giveRoleListenerModule() {
+        long time = System.currentTimeMillis() / 1000;
+        try (ResultSet resultSet = mySqlConnector.Select_Query(
+                "SELECT * FROM blitz_bot.GiveRoleBanTable WHERE endTime < ?;",
+                new int[]{mySqlConnector.STRING}, new String[]{String.valueOf(time)})) {
+            while (resultSet.next()) {
+                mySqlConnector.Insert_Query(
+                        "DELETE FROM blitz_bot.GiveRoleBanTable WHERE userId = ?;",
+                        new int[] {mySqlConnector.STRING}, new String[]{resultSet.getString("userId")});
+            }
+
+        } catch (SQLException sqlException) {
+            sqlException.fillInStackTrace();
+            try {
+                mySqlConnector.reConnection();
+            } catch (SQLException throwable) {
+                logger.error(sqlException.getMessage());
+                throwable.fillInStackTrace();
+            }
+            logger.error(sqlException.getMessage());
+        }
+    }
+
     private boolean isLastMessageModule(String channelId, String messageId) {
         boolean value = false;
         try(ResultSet rs = mySqlConnector.Select_Query("SELECT * FROM blitz_bot.isLastMessage WHERE channelId = ?", new int[]{mySqlConnector.STRING}, new String[] {channelId})) {
@@ -132,6 +180,14 @@ public class OnReadyListener extends ListenerAdapter {
             throw new RuntimeException(e);
         }
         return value;
+    }
+
+    private void lastMessageChangeModule(String channelId, String messageId) {
+        try{
+            mySqlConnector.Insert_Query("UPDATE blitz_bot.isLastMessage SET messageId = ? WHERE channelId = ?", new int[]{mySqlConnector.STRING, mySqlConnector.STRING}, new String[] {messageId, channelId});
+        } catch (SQLException e) {
+            e.fillInStackTrace();
+        }
     }
 
     private void messageCheckingModule(GuildMessageChannel input, GuildMessageChannel output) throws ExecutionException, InterruptedException {
@@ -155,9 +211,10 @@ public class OnReadyListener extends ListenerAdapter {
                 messageCreateAction = output.sendMessage(input.getName() + "\n" + outputMessage);
                 messageCreateAction.addFiles(downloadFile);
             } else {
-                output.sendFiles(downloadFile);
+                messageCreateAction = output.sendFiles(downloadFile);
             }
-            message.delete().queue();
+            lastMessageChangeModule(input.getId(), message.getId());
+            messageCreateAction.queue();
         }
     }
 

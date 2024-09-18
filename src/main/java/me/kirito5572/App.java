@@ -153,11 +153,12 @@ public class App {
         MessagePinListener messagePinListener = new MessagePinListener(mySqlConnector);
         LogListener logListener = new LogListener(mySqlConnector);
         MuteListener muteListener = new MuteListener(mySqlConnector);
+        GiveRoleListener giveRoleListener = new GiveRoleListener(mySqlConnector);
         logger.info("디스코드 서버와 연결 준비 완료, 접속 시도중...");
         try {
             JDA jda = JDABuilder.createDefault(TOKEN)
                     .setAutoReconnect(true)
-                    .addEventListeners(onReadyListener, eventListener, emoteClickGiveRoleListener, filterListener, messagePinListener, logListener, muteListener)
+                    .addEventListeners(onReadyListener, eventListener, emoteClickGiveRoleListener, filterListener, messagePinListener, logListener, muteListener, giveRoleListener)
                     .setEnabledIntents(GatewayIntent.getIntents(GatewayIntent.ALL_INTENTS))
                     .setChunkingFilter(ChunkingFilter.ALL)
                     .build().awaitReady();
