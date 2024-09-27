@@ -122,7 +122,7 @@ public class LogListener extends ListenerAdapter {
                         file = new File(attachment.getFileName() + "." + attachment.getFileExtension());
                     }
                     try {
-                        attachment.getProxy().downloadToFile(file);
+                        file = attachment.getProxy().downloadToFile(file).join();
                     } catch (CancellationException e) {
                         logger.error("로그 파일 다운로드에 실패했습니다.");
                         logger.warn(e.getMessage());
