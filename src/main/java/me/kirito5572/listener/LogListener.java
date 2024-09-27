@@ -113,7 +113,14 @@ public class LogListener extends ListenerAdapter {
             for (Message.Attachment attachment : files) {
                 if (attachment.isImage() || attachment.isVideo()) {
                     i++;
-                    File file = new File(attachment.getFileName() + "." + attachment.getFileExtension());
+                    String extension = attachment.getFileExtension();
+                    String FileName = attachment.getFileName();
+                    File file;
+                    if(extension != null && FileName.contains(extension)) {
+                        file = new File(attachment.getFileName());
+                    } else {
+                        file = new File(attachment.getFileName() + "." + attachment.getFileExtension());
+                    }
                     try {
                         attachment.getProxy().downloadToFile(file);
                     } catch (CancellationException e) {

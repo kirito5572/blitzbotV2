@@ -20,6 +20,9 @@ public class MySqlConnector {
     public final int BOOLEAN = 2;
     public final int LONG = 3;
 
+    //TODO 추후 SQL Query 구조를 stack화 하여 정상 처리된 Query는 stack에서 삭제, 에러 발생한 Query는 재접속 시도후 처리, 5회 실패시 알림 발생하게 하기
+    //TODO 이후 connection refused시 stack에서 처리 하지 않고 접속 까지 대기 토록 하는 코드 작성
+
 
     public MySqlConnector() throws ClassNotFoundException, SQLException {
         url = "jdbc:mysql://" + openFileData("endPoint") + "/blitz_bot?serverTimezone=UTC";
@@ -65,7 +68,11 @@ public class MySqlConnector {
         if (!connection.isClosed()) {
             connection.close();
         }
-        connection = DriverManager.getConnection(url, user, password);
+        try {
+            connection = DriverManager.getConnection(url, user, password);
+        } catch (SQLException e) {
+            e.fillInStackTrace();
+        }
     }
 
     /**
@@ -77,6 +84,9 @@ public class MySqlConnector {
      * @return {@link java.sql.ResultSet}
      */
     public ResultSet Select_Query(@Language("MySQL") String query, int[] dataType, String[] data) throws SQLException {
+        if(connection.isClosed()) {
+            reConnection();
+        }
         PreparedStatement statement = connection.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         Query(statement, dataType, data);
         return statement.executeQuery();
@@ -90,9 +100,6 @@ public class MySqlConnector {
      * @throws SQLException - if query execution fail or database access error occurs
      */
     public void Query(@NotNull PreparedStatement statement, int[] dataType, String[] data) throws SQLException {
-        if(statement.getConnection().isClosed()) {
-            reConnection();
-        }
         for(int i = 0; i < dataType.length; i++) {
             if(dataType[i] == STRING) {
                 statement.setString(i + 1, data[i]);
@@ -115,6 +122,9 @@ public class MySqlConnector {
      * @throws SQLException if query execution fail or database access error occurs
      */
     public void Insert_Query(@Language("MySQL") String Query, int[] dataType, String[] data) throws SQLException {
+        if(connection.isClosed()) {
+            reConnection();
+        }
         PreparedStatement statement = connection.prepareStatement(Query);
         Query(statement, dataType, data);
         boolean isEnd = statement.execute();

@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Calendar;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class GiveRoleListener extends ListenerAdapter {
@@ -86,8 +87,7 @@ public class GiveRoleListener extends ListenerAdapter {
 
         int mYear = calendar.get(Calendar.YEAR), mMonth = calendar.get(Calendar.MONTH) + 1, mDay = calendar.get(Calendar.DAY_OF_MONTH),
                 mHour = calendar.get(Calendar.HOUR_OF_DAY), mMin = calendar.get(Calendar.MINUTE), mSec = calendar.get(Calendar.SECOND);
-        String Date = mYear + "년 " + mMonth + "월 " + mDay + "일 " + mHour + "시 " + mMin + "분 " + mSec + "초";
-        return Date;
+        return mYear + "년 " + mMonth + "월 " + mDay + "일 " + mHour + "시 " + mMin + "분 " + mSec + "초";
     }
 
     @Override
@@ -116,11 +116,12 @@ public class GiveRoleListener extends ListenerAdapter {
         Guild guild = event.getGuild();
         if (guild.getId().equals("826704284003205160")) {
             Member member = event.getMember();
-            assert member != null;
+            String id;
+            id = Objects.requireNonNullElseGet(member, event::getUser).getId();
             try {
                 mySqlConnector.Insert_Query("UPDATE blitz_bot.JoinDataTable SET rejectTime =? WHERE userId = ? AND rejectTime = ?",
                         new int[]{mySqlConnector.STRING, mySqlConnector.STRING, mySqlConnector.STRING},
-                        new String[] {String.valueOf(System.currentTimeMillis() / 1000),  member.getId(), "1"});
+                        new String[] {String.valueOf(System.currentTimeMillis() / 1000),  id, "1"});
             } catch (SQLException sqlException) {
                 logger.error(sqlException.getMessage());
             }
@@ -162,7 +163,7 @@ public class GiveRoleListener extends ListenerAdapter {
                     return "true/" + check_time[i][0] + "#" + check_time[i][1];
                 }
             } catch (SQLException sqlException) {
-                sqlException.printStackTrace();
+                sqlException.fillInStackTrace();
                 logger.error("에러발생!! giveRoleListener#onGuildMessageReactionAdd#cool-time");
                 return "error";
             }
@@ -187,8 +188,8 @@ public class GiveRoleListener extends ListenerAdapter {
                 return resultSet.getLong("endTime");
             }
         } catch (SQLException sqlException) {
-            sqlException.printStackTrace();
-            logger.error("에러발생!! giveRoleListener#onGuildMessageReactionAdd#cool-time");
+            sqlException.fillInStackTrace();
+            logger.error("에러발생!! giveRoleListener#isBan#cool-time");
         }
         return 0;
     }
