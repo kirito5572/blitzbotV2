@@ -10,14 +10,12 @@ import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.sql.SQLException;
-
 public class EventListener extends ListenerAdapter {
     private final Logger logger = LoggerFactory.getLogger(EventListener.class);
-    private final MySqlConnector mySQLConnector;
+    private final MySqlConnector mySqlConnector;
 
     public EventListener(MySqlConnector mySQLConnector) {
-        this.mySQLConnector = mySQLConnector;
+        this.mySqlConnector = mySQLConnector;
     }
 
 
@@ -39,17 +37,12 @@ public class EventListener extends ListenerAdapter {
         if (guild.getId().equals("826704284003205160")) {
             if (event.getMessageId().equals("1017430875480268820")) {
                 try {
-                    try {
-                        mySQLConnector.Insert_Query("INSERT IGNORE INTO blitz_bot.event VALUES (?)",
-                                new int[]{mySQLConnector.STRING},
-                                new String[]{member.getId()});
-                        member.getUser().openPrivateChannel().flatMap(channel -> channel.sendMessage("이벤트에 정상 참여되었습니다.")).queue();
-                    } catch (SQLException sqlException) {
-                        member.getUser().openPrivateChannel().flatMap(channel -> channel.sendMessage("""
-                                이벤트에 정상 참여되지 않았습니다.
-                                이미 이벤트에 참여되었거나 혹은 에러가 발생한 것입니다.
-                                다시 한번 이모지를 클릭하여 보시고, 그래도 되지 않을 경우 문의 부탁드립니다.""")).queue();
-                    }
+                    MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+                    queryData.query = "INSERT IGNORE INTO blitz_bot.event VALUES (?)";
+                    queryData.dataType = new int[]{mySqlConnector.STRING};
+                    queryData.data = new String[]{member.getId()};
+                    mySqlConnector.Insert_Query(queryData);
+                    member.getUser().openPrivateChannel().flatMap(channel -> channel.sendMessage("이벤트에 정상 참여되었습니다.")).queue();
                 } catch (UnsupportedOperationException ignored) {
                 }
             }

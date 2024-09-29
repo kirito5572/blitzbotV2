@@ -1,316 +1,50 @@
-[35m[2024-09-19 01:31:01][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mStart up
-[0;39m[35m[2024-09-19 01:31:01][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mOS: windows 11
-[0;39m[35m[2024-09-19 01:31:01][0;39m [32m[main][0;39m [1;31m[ERROR][0;39m [36mme.kirito5572.App[0;39m - [1;35malpha program version: alpha version
-[0;39m[35m[2024-09-19 01:31:02][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m기본 정보 로딩됨, SQL 서버에 접속 시도...
-[0;39m[35m[2024-09-19 01:31:02][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mSQL 서버 연결 성공, API 서비스 접속중...
-[0;39m[35m[2024-09-19 01:31:02][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mAPI 서비스 접속 성공, 봇 시작중... 각 기능부 실행
-[0;39m[35m[2024-09-19 01:31:02][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m디스코드 서버와 연결 준비 완료, 접속 시도중...
-[0;39m[35m[2024-09-19 01:31:03][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mLogin Successful!
-[0;39m[35m[2024-09-19 01:31:03][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mn.d.j.i.requests.WebSocketClient[0;39m - [1;35mConnected to WebSocket
-[0;39m[35m[2024-09-19 01:31:03][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mFinished Loading!
-[0;39m[35m[2024-09-19 01:31:04][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.OnReadyListener[0;39m - [1;35m자동화 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:31:04][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.kirito5572.listener.EventListener[0;39m - [1;35m이벤트 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:31:04][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.l.EmoteClickGiveRoleListener[0;39m - [1;35m규칙 동의 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:31:04][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.FilterListener[0;39m - [1;35m 필터 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:31:04][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.MessagePinListener[0;39m - [1;35m 메세지 고정 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:31:04][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
-[0;39m[35m[2024-09-19 01:31:04][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 로딩중
-[0;39m[35m[2024-09-19 01:31:04][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 셋팅 완료
-[0;39m[35m[2024-09-19 01:31:04][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m연결 완료. 부팅 완료
-[0;39m[35m[2024-09-19 01:32:05][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mStart up
-[0;39m[35m[2024-09-19 01:32:05][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mOS: windows 11
-[0;39m[35m[2024-09-19 01:32:05][0;39m [32m[main][0;39m [1;31m[ERROR][0;39m [36mme.kirito5572.App[0;39m - [1;35malpha program version: alpha version
-[0;39m[35m[2024-09-19 01:32:06][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m기본 정보 로딩됨, SQL 서버에 접속 시도...
-[0;39m[35m[2024-09-19 01:32:06][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mSQL 서버 연결 성공, API 서비스 접속중...
-[0;39m[35m[2024-09-19 01:32:06][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mAPI 서비스 접속 성공, 봇 시작중... 각 기능부 실행
-[0;39m[35m[2024-09-19 01:32:06][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m디스코드 서버와 연결 준비 완료, 접속 시도중...
-[0;39m[35m[2024-09-19 01:32:06][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mLogin Successful!
-[0;39m[35m[2024-09-19 01:32:07][0;39m [32m[JDA MainWS-WriteThread][0;39m [34m[INFO ][0;39m [36mn.d.j.i.requests.WebSocketClient[0;39m - [1;35mConnected to WebSocket
-[0;39m[35m[2024-09-19 01:32:07][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mFinished Loading!
-[0;39m[35m[2024-09-19 01:32:07][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.OnReadyListener[0;39m - [1;35m자동화 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:32:07][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.kirito5572.listener.EventListener[0;39m - [1;35m이벤트 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:32:07][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.l.EmoteClickGiveRoleListener[0;39m - [1;35m규칙 동의 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:32:07][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.FilterListener[0;39m - [1;35m 필터 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:32:07][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.MessagePinListener[0;39m - [1;35m 메세지 고정 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:32:07][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
-[0;39m[35m[2024-09-19 01:32:07][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 로딩중
-[0;39m[35m[2024-09-19 01:32:08][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 셋팅 완료
-[0;39m[35m[2024-09-19 01:32:08][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m연결 완료. 부팅 완료
-[0;39m[35m[2024-09-19 01:38:16][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mStart up
-[0;39m[35m[2024-09-19 01:38:16][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mOS: windows 11
-[0;39m[35m[2024-09-19 01:38:16][0;39m [32m[main][0;39m [1;31m[ERROR][0;39m [36mme.kirito5572.App[0;39m - [1;35malpha program version: alpha version
-[0;39m[35m[2024-09-19 01:38:16][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m기본 정보 로딩됨, SQL 서버에 접속 시도...
-[0;39m[35m[2024-09-19 01:38:16][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mSQL 서버 연결 성공, API 서비스 접속중...
-[0;39m[35m[2024-09-19 01:38:16][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mAPI 서비스 접속 성공, 봇 시작중... 각 기능부 실행
-[0;39m[35m[2024-09-19 01:38:16][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m디스코드 서버와 연결 준비 완료, 접속 시도중...
-[0;39m[35m[2024-09-19 01:38:17][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mLogin Successful!
-[0;39m[35m[2024-09-19 01:38:17][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mn.d.j.i.requests.WebSocketClient[0;39m - [1;35mConnected to WebSocket
-[0;39m[35m[2024-09-19 01:38:18][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mFinished Loading!
-[0;39m[35m[2024-09-19 01:38:18][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.OnReadyListener[0;39m - [1;35m자동화 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:38:18][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.kirito5572.listener.EventListener[0;39m - [1;35m이벤트 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:38:18][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.l.EmoteClickGiveRoleListener[0;39m - [1;35m규칙 동의 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:38:18][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.FilterListener[0;39m - [1;35m 필터 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:38:18][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.MessagePinListener[0;39m - [1;35m 메세지 고정 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:38:18][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
-[0;39m[35m[2024-09-19 01:38:18][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 로딩중
-[0;39m[35m[2024-09-19 01:38:18][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 셋팅 완료
-[0;39m[35m[2024-09-19 01:38:18][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m연결 완료. 부팅 완료
-[0;39m[35m[2024-09-19 01:39:48][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mStart up
-[0;39m[35m[2024-09-19 01:39:48][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mOS: windows 11
-[0;39m[35m[2024-09-19 01:39:48][0;39m [32m[main][0;39m [1;31m[ERROR][0;39m [36mme.kirito5572.App[0;39m - [1;35malpha program version: alpha version
-[0;39m[35m[2024-09-19 01:39:48][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m기본 정보 로딩됨, SQL 서버에 접속 시도...
-[0;39m[35m[2024-09-19 01:39:48][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mSQL 서버 연결 성공, API 서비스 접속중...
-[0;39m[35m[2024-09-19 01:39:48][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mAPI 서비스 접속 성공, 봇 시작중... 각 기능부 실행
-[0;39m[35m[2024-09-19 01:39:48][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m디스코드 서버와 연결 준비 완료, 접속 시도중...
-[0;39m[35m[2024-09-19 01:39:49][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mLogin Successful!
-[0;39m[35m[2024-09-19 01:39:49][0;39m [32m[JDA MainWS-WriteThread][0;39m [34m[INFO ][0;39m [36mn.d.j.i.requests.WebSocketClient[0;39m - [1;35mConnected to WebSocket
-[0;39m[35m[2024-09-19 01:39:49][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mFinished Loading!
-[0;39m[35m[2024-09-19 01:39:49][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.OnReadyListener[0;39m - [1;35m자동화 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:39:49][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.kirito5572.listener.EventListener[0;39m - [1;35m이벤트 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:39:49][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.l.EmoteClickGiveRoleListener[0;39m - [1;35m규칙 동의 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:39:49][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.FilterListener[0;39m - [1;35m 필터 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:39:49][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.MessagePinListener[0;39m - [1;35m 메세지 고정 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:39:49][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.GiveRoleListener[0;39m - [1;35m역할 지급 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:39:49][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
-[0;39m[35m[2024-09-19 01:39:50][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 로딩중
-[0;39m[35m[2024-09-19 01:39:50][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 셋팅 완료
-[0;39m[35m[2024-09-19 01:39:50][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m연결 완료. 부팅 완료
-[0;39m[35m[2024-09-19 01:42:15][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mStart up
-[0;39m[35m[2024-09-19 01:42:15][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mOS: windows 11
-[0;39m[35m[2024-09-19 01:42:15][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mprogram version: stable version
-[0;39m[35m[2024-09-19 01:42:15][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m기본 정보 로딩됨, SQL 서버에 접속 시도...
-[0;39m[35m[2024-09-19 01:42:15][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mSQL 서버 연결 성공, API 서비스 접속중...
-[0;39m[35m[2024-09-19 01:42:15][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mAPI 서비스 접속 성공, 봇 시작중... 각 기능부 실행
-[0;39m[35m[2024-09-19 01:42:15][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m디스코드 서버와 연결 준비 완료, 접속 시도중...
-[0;39m[35m[2024-09-19 01:42:16][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mLogin Successful!
-[0;39m[35m[2024-09-19 01:42:16][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mn.d.j.i.requests.WebSocketClient[0;39m - [1;35mConnected to WebSocket
-[0;39m[35m[2024-09-19 01:42:17][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mFinished Loading!
-[0;39m[35m[2024-09-19 01:42:17][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.OnReadyListener[0;39m - [1;35m자동화 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:42:17][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.kirito5572.listener.EventListener[0;39m - [1;35m이벤트 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:42:17][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.l.EmoteClickGiveRoleListener[0;39m - [1;35m규칙 동의 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:42:17][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.FilterListener[0;39m - [1;35m 필터 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:42:17][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.MessagePinListener[0;39m - [1;35m 메세지 고정 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:42:17][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.GiveRoleListener[0;39m - [1;35m역할 지급 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:42:17][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
-[0;39m[35m[2024-09-19 01:42:18][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 로딩중
-[0;39m[35m[2024-09-19 01:42:18][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 셋팅 완료
-[0;39m[35m[2024-09-19 01:42:18][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m연결 완료. 부팅 완료
-[0;39m[35m[2024-09-19 01:42:39][0;39m [32m[JDA MainWS-ReadThread][0;39m [1;31m[ERROR][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mOne of the EventListeners had an uncaught exception
-[0;39mjava.lang.IllegalArgumentException: User may not be null
-	at net.dv8tion.jda.internal.utils.Checks.notNull(Checks.java:86) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.entities.GuildImpl.removeRoleFromMember(GuildImpl.java:1698) ~[JDA-5.1.0.jar:5.1.0]
-	at me.kirito5572.listener.GiveRoleListener.onMessageReactionRemove(GiveRoleListener.java:102) ~[classes/:na]
-	at net.dv8tion.jda.api.hooks.ListenerAdapter.onEvent(ListenerAdapter.java:455) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.api.hooks.InterfacedEventManager.handle(InterfacedEventManager.java:98) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handleInternally(EventManagerProxy.java:88) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handle(EventManagerProxy.java:70) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.JDAImpl.handleEvent(JDAImpl.java:169) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.handle.MessageReactionHandler.handleInternally(MessageReactionHandler.java:187) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.handle.SocketHandler.handle(SocketHandler.java:39) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onDispatch(WebSocketClient.java:1009) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onEvent(WebSocketClient.java:892) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.handleEvent(WebSocketClient.java:870) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onBinaryMessage(WebSocketClient.java:1048) ~[JDA-5.1.0.jar:5.1.0]
-	at com.neovisionaries.ws.client.ListenerManager.callOnBinaryMessage(ListenerManager.java:385) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.callOnBinaryMessage(ReadingThread.java:276) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.handleBinaryFrame(ReadingThread.java:996) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.handleFrame(ReadingThread.java:755) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.main(ReadingThread.java:108) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.runMain(ReadingThread.java:64) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.WebSocketThread.run(WebSocketThread.java:45) ~[nv-websocket-client-2.14.jar:na]
-[35m[2024-09-19 01:44:28][0;39m [32m[JDA MainWS-ReadThread][0;39m [1;31m[ERROR][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mOne of the EventListeners had an uncaught exception
-[0;39mjava.lang.IllegalArgumentException: User may not be null
-	at net.dv8tion.jda.internal.utils.Checks.notNull(Checks.java:86) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.entities.GuildImpl.removeRoleFromMember(GuildImpl.java:1698) ~[JDA-5.1.0.jar:5.1.0]
-	at me.kirito5572.listener.GiveRoleListener.onMessageReactionRemove(GiveRoleListener.java:102) ~[classes/:na]
-	at net.dv8tion.jda.api.hooks.ListenerAdapter.onEvent(ListenerAdapter.java:455) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.api.hooks.InterfacedEventManager.handle(InterfacedEventManager.java:98) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handleInternally(EventManagerProxy.java:88) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handle(EventManagerProxy.java:70) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.JDAImpl.handleEvent(JDAImpl.java:169) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.handle.MessageReactionHandler.handleInternally(MessageReactionHandler.java:187) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.handle.SocketHandler.handle(SocketHandler.java:39) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onDispatch(WebSocketClient.java:1009) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onEvent(WebSocketClient.java:892) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.handleEvent(WebSocketClient.java:870) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onBinaryMessage(WebSocketClient.java:1048) ~[JDA-5.1.0.jar:5.1.0]
-	at com.neovisionaries.ws.client.ListenerManager.callOnBinaryMessage(ListenerManager.java:385) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.callOnBinaryMessage(ReadingThread.java:276) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.handleBinaryFrame(ReadingThread.java:996) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.handleFrame(ReadingThread.java:755) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.main(ReadingThread.java:108) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.runMain(ReadingThread.java:64) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.WebSocketThread.run(WebSocketThread.java:45) ~[nv-websocket-client-2.14.jar:na]
-[35m[2024-09-19 01:44:57][0;39m [32m[JDA MainWS-ReadThread][0;39m [1;31m[ERROR][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mOne of the EventListeners had an uncaught exception
-[0;39mjava.lang.IllegalArgumentException: User may not be null
-	at net.dv8tion.jda.internal.utils.Checks.notNull(Checks.java:86) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.entities.GuildImpl.removeRoleFromMember(GuildImpl.java:1698) ~[JDA-5.1.0.jar:5.1.0]
-	at me.kirito5572.listener.GiveRoleListener.onMessageReactionRemove(GiveRoleListener.java:102) ~[classes/:na]
-	at net.dv8tion.jda.api.hooks.ListenerAdapter.onEvent(ListenerAdapter.java:455) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.api.hooks.InterfacedEventManager.handle(InterfacedEventManager.java:98) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handleInternally(EventManagerProxy.java:88) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handle(EventManagerProxy.java:70) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.JDAImpl.handleEvent(JDAImpl.java:169) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.handle.MessageReactionHandler.handleInternally(MessageReactionHandler.java:187) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.handle.SocketHandler.handle(SocketHandler.java:39) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onDispatch(WebSocketClient.java:1009) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onEvent(WebSocketClient.java:892) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.handleEvent(WebSocketClient.java:870) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onBinaryMessage(WebSocketClient.java:1048) ~[JDA-5.1.0.jar:5.1.0]
-	at com.neovisionaries.ws.client.ListenerManager.callOnBinaryMessage(ListenerManager.java:385) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.callOnBinaryMessage(ReadingThread.java:276) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.handleBinaryFrame(ReadingThread.java:996) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.handleFrame(ReadingThread.java:755) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.main(ReadingThread.java:108) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.runMain(ReadingThread.java:64) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.WebSocketThread.run(WebSocketThread.java:45) ~[nv-websocket-client-2.14.jar:na]
-[35m[2024-09-19 01:45:34][0;39m [32m[JDA MainWS-ReadThread][0;39m [1;31m[ERROR][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mOne of the EventListeners had an uncaught exception
-[0;39mjava.lang.NullPointerException: Cannot invoke "net.dv8tion.jda.api.entities.Member.getId()" because "member" is null
-	at me.kirito5572.listener.GiveRoleListener.onMessageReactionRemove(GiveRoleListener.java:102) ~[classes/:na]
-	at net.dv8tion.jda.api.hooks.ListenerAdapter.onEvent(ListenerAdapter.java:455) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.api.hooks.InterfacedEventManager.handle(InterfacedEventManager.java:98) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handleInternally(EventManagerProxy.java:88) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handle(EventManagerProxy.java:70) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.JDAImpl.handleEvent(JDAImpl.java:169) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.handle.MessageReactionHandler.handleInternally(MessageReactionHandler.java:187) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.handle.SocketHandler.handle(SocketHandler.java:39) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onDispatch(WebSocketClient.java:1009) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onEvent(WebSocketClient.java:892) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.handleEvent(WebSocketClient.java:870) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onBinaryMessage(WebSocketClient.java:1048) ~[JDA-5.1.0.jar:5.1.0]
-	at com.neovisionaries.ws.client.ListenerManager.callOnBinaryMessage(ListenerManager.java:385) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.callOnBinaryMessage(ReadingThread.java:276) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.handleBinaryFrame(ReadingThread.java:996) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.handleFrame(ReadingThread.java:755) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.main(ReadingThread.java:108) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.runMain(ReadingThread.java:64) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.WebSocketThread.run(WebSocketThread.java:45) ~[nv-websocket-client-2.14.jar:na]
-[35m[2024-09-19 01:46:55][0;39m [32m[JDA MainWS-ReadThread][0;39m [1;31m[ERROR][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mOne of the EventListeners had an uncaught exception
-[0;39mjava.lang.IllegalStateException: This message event did not happen in a guild
-	at net.dv8tion.jda.api.events.message.GenericMessageEvent.getGuild(GenericMessageEvent.java:162) ~[JDA-5.1.0.jar:5.1.0]
-	at me.kirito5572.listener.MessagePinListener.onMessageReceived(MessagePinListener.java:30) ~[classes/:na]
-	at net.dv8tion.jda.api.hooks.ListenerAdapter.onEvent(ListenerAdapter.java:455) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.api.hooks.InterfacedEventManager.handle(InterfacedEventManager.java:98) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handleInternally(EventManagerProxy.java:88) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handle(EventManagerProxy.java:70) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.JDAImpl.handleEvent(JDAImpl.java:169) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.handle.MessageCreateHandler.handleInternally(MessageCreateHandler.java:138) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.handle.SocketHandler.handle(SocketHandler.java:39) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onDispatch(WebSocketClient.java:1009) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onEvent(WebSocketClient.java:892) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.handleEvent(WebSocketClient.java:870) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onBinaryMessage(WebSocketClient.java:1048) ~[JDA-5.1.0.jar:5.1.0]
-	at com.neovisionaries.ws.client.ListenerManager.callOnBinaryMessage(ListenerManager.java:385) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.callOnBinaryMessage(ReadingThread.java:276) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.handleBinaryFrame(ReadingThread.java:996) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.handleFrame(ReadingThread.java:755) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.main(ReadingThread.java:108) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.runMain(ReadingThread.java:64) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.WebSocketThread.run(WebSocketThread.java:45) ~[nv-websocket-client-2.14.jar:na]
-[35m[2024-09-19 01:47:08][0;39m [32m[JDA MainWS-ReadThread][0;39m [1;31m[ERROR][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mOne of the EventListeners had an uncaught exception
-[0;39mjava.lang.IllegalStateException: This message event did not happen in a guild
-	at net.dv8tion.jda.api.events.message.GenericMessageEvent.getGuild(GenericMessageEvent.java:162) ~[JDA-5.1.0.jar:5.1.0]
-	at me.kirito5572.listener.MessagePinListener.onMessageReceived(MessagePinListener.java:30) ~[classes/:na]
-	at net.dv8tion.jda.api.hooks.ListenerAdapter.onEvent(ListenerAdapter.java:455) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.api.hooks.InterfacedEventManager.handle(InterfacedEventManager.java:98) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handleInternally(EventManagerProxy.java:88) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handle(EventManagerProxy.java:70) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.JDAImpl.handleEvent(JDAImpl.java:169) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.handle.MessageCreateHandler.handleInternally(MessageCreateHandler.java:138) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.handle.SocketHandler.handle(SocketHandler.java:39) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onDispatch(WebSocketClient.java:1009) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onEvent(WebSocketClient.java:892) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.handleEvent(WebSocketClient.java:870) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onBinaryMessage(WebSocketClient.java:1048) ~[JDA-5.1.0.jar:5.1.0]
-	at com.neovisionaries.ws.client.ListenerManager.callOnBinaryMessage(ListenerManager.java:385) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.callOnBinaryMessage(ReadingThread.java:276) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.handleBinaryFrame(ReadingThread.java:996) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.handleFrame(ReadingThread.java:755) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.main(ReadingThread.java:108) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.runMain(ReadingThread.java:64) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.WebSocketThread.run(WebSocketThread.java:45) ~[nv-websocket-client-2.14.jar:na]
-[35m[2024-09-19 01:49:50][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mStart up
-[0;39m[35m[2024-09-19 01:49:50][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mOS: windows 11
-[0;39m[35m[2024-09-19 01:49:50][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mprogram version: stable version
-[0;39m[35m[2024-09-19 01:49:50][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m기본 정보 로딩됨, SQL 서버에 접속 시도...
-[0;39m[35m[2024-09-19 01:49:50][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mSQL 서버 연결 성공, API 서비스 접속중...
-[0;39m[35m[2024-09-19 01:49:50][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mAPI 서비스 접속 성공, 봇 시작중... 각 기능부 실행
-[0;39m[35m[2024-09-19 01:49:50][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m디스코드 서버와 연결 준비 완료, 접속 시도중...
-[0;39m[35m[2024-09-19 01:49:51][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mLogin Successful!
-[0;39m[35m[2024-09-19 01:49:51][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mn.d.j.i.requests.WebSocketClient[0;39m - [1;35mConnected to WebSocket
-[0;39m[35m[2024-09-19 01:49:52][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mFinished Loading!
-[0;39m[35m[2024-09-19 01:49:52][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.OnReadyListener[0;39m - [1;35m자동화 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:49:52][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.kirito5572.listener.EventListener[0;39m - [1;35m이벤트 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:49:52][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.l.EmoteClickGiveRoleListener[0;39m - [1;35m규칙 동의 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:49:52][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.FilterListener[0;39m - [1;35m 필터 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:49:52][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.MessagePinListener[0;39m - [1;35m 메세지 고정 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:49:52][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.GiveRoleListener[0;39m - [1;35m역할 지급 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:49:52][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
-[0;39m[35m[2024-09-19 01:49:53][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 로딩중
-[0;39m[35m[2024-09-19 01:49:53][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 셋팅 완료
-[0;39m[35m[2024-09-19 01:49:53][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m연결 완료. 부팅 완료
-[0;39m[35m[2024-09-19 01:49:59][0;39m [32m[JDA MainWS-ReadThread][0;39m [1;31m[ERROR][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mOne of the EventListeners had an uncaught exception
-[0;39mjava.lang.IllegalStateException: This message event did not happen in a guild
-	at net.dv8tion.jda.api.events.message.GenericMessageEvent.getGuild(GenericMessageEvent.java:162) ~[JDA-5.1.0.jar:5.1.0]
-	at me.kirito5572.listener.MessagePinListener.onMessageReceived(MessagePinListener.java:30) ~[classes/:na]
-	at net.dv8tion.jda.api.hooks.ListenerAdapter.onEvent(ListenerAdapter.java:455) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.api.hooks.InterfacedEventManager.handle(InterfacedEventManager.java:98) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handleInternally(EventManagerProxy.java:88) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handle(EventManagerProxy.java:70) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.JDAImpl.handleEvent(JDAImpl.java:169) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.handle.MessageCreateHandler.handleInternally(MessageCreateHandler.java:138) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.handle.SocketHandler.handle(SocketHandler.java:39) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onDispatch(WebSocketClient.java:1009) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onEvent(WebSocketClient.java:892) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.handleEvent(WebSocketClient.java:870) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onBinaryMessage(WebSocketClient.java:1048) ~[JDA-5.1.0.jar:5.1.0]
-	at com.neovisionaries.ws.client.ListenerManager.callOnBinaryMessage(ListenerManager.java:385) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.callOnBinaryMessage(ReadingThread.java:276) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.handleBinaryFrame(ReadingThread.java:996) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.handleFrame(ReadingThread.java:755) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.main(ReadingThread.java:108) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.runMain(ReadingThread.java:64) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.WebSocketThread.run(WebSocketThread.java:45) ~[nv-websocket-client-2.14.jar:na]
-[35m[2024-09-19 01:49:59][0;39m [32m[JDA MainWS-ReadThread][0;39m [1;31m[ERROR][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mOne of the EventListeners had an uncaught exception
-[0;39mjava.lang.IllegalStateException: This message event did not happen in a guild
-	at net.dv8tion.jda.api.events.message.GenericMessageEvent.getGuild(GenericMessageEvent.java:162) ~[JDA-5.1.0.jar:5.1.0]
-	at me.kirito5572.listener.MessagePinListener.onMessageReceived(MessagePinListener.java:30) ~[classes/:na]
-	at net.dv8tion.jda.api.hooks.ListenerAdapter.onEvent(ListenerAdapter.java:455) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.api.hooks.InterfacedEventManager.handle(InterfacedEventManager.java:98) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handleInternally(EventManagerProxy.java:88) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handle(EventManagerProxy.java:70) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.JDAImpl.handleEvent(JDAImpl.java:169) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.handle.MessageCreateHandler.handleInternally(MessageCreateHandler.java:138) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.handle.SocketHandler.handle(SocketHandler.java:39) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onDispatch(WebSocketClient.java:1009) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onEvent(WebSocketClient.java:892) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.handleEvent(WebSocketClient.java:870) ~[JDA-5.1.0.jar:5.1.0]
-	at net.dv8tion.jda.internal.requests.WebSocketClient.onBinaryMessage(WebSocketClient.java:1048) ~[JDA-5.1.0.jar:5.1.0]
-	at com.neovisionaries.ws.client.ListenerManager.callOnBinaryMessage(ListenerManager.java:385) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.callOnBinaryMessage(ReadingThread.java:276) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.handleBinaryFrame(ReadingThread.java:996) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.handleFrame(ReadingThread.java:755) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.main(ReadingThread.java:108) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.ReadingThread.runMain(ReadingThread.java:64) ~[nv-websocket-client-2.14.jar:na]
-	at com.neovisionaries.ws.client.WebSocketThread.run(WebSocketThread.java:45) ~[nv-websocket-client-2.14.jar:na]
-[35m[2024-09-19 01:51:59][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mStart up
-[0;39m[35m[2024-09-19 01:51:59][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mOS: windows 11
-[0;39m[35m[2024-09-19 01:51:59][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mprogram version: stable version
-[0;39m[35m[2024-09-19 01:51:59][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m기본 정보 로딩됨, SQL 서버에 접속 시도...
-[0;39m[35m[2024-09-19 01:51:59][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mSQL 서버 연결 성공, API 서비스 접속중...
-[0;39m[35m[2024-09-19 01:51:59][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mAPI 서비스 접속 성공, 봇 시작중... 각 기능부 실행
-[0;39m[35m[2024-09-19 01:51:59][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m디스코드 서버와 연결 준비 완료, 접속 시도중...
-[0;39m[35m[2024-09-19 01:52:00][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mLogin Successful!
-[0;39m[35m[2024-09-19 01:52:00][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mn.d.j.i.requests.WebSocketClient[0;39m - [1;35mConnected to WebSocket
-[0;39m[35m[2024-09-19 01:52:01][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mFinished Loading!
-[0;39m[35m[2024-09-19 01:52:01][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.OnReadyListener[0;39m - [1;35m자동화 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:52:01][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.kirito5572.listener.EventListener[0;39m - [1;35m이벤트 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:52:01][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.l.EmoteClickGiveRoleListener[0;39m - [1;35m규칙 동의 처리부 시작 완료
-[0;39m[35m[2024-09-19 01:52:01][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.FilterListener[0;39m - [1;35m 필터 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:52:01][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.MessagePinListener[0;39m - [1;35m 메세지 고정 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:52:01][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.GiveRoleListener[0;39m - [1;35m역할 지급 기능부 준비 완료
-[0;39m[35m[2024-09-19 01:52:01][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
-[0;39m[35m[2024-09-19 01:52:02][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 로딩중
-[0;39m[35m[2024-09-19 01:52:02][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 셋팅 완료
-[0;39m[35m[2024-09-19 01:52:02][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m연결 완료. 부팅 완료
+[35m[2024-09-29 16:40:18][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mStart up
+[0;39m[35m[2024-09-29 16:40:18][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mOS: windows 11
+[0;39m[35m[2024-09-29 16:40:18][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mprogram version: stable version
+[0;39m[35m[2024-09-29 16:40:19][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m기본 정보 로딩됨, SQL 서버에 접속 시도...
+[0;39m[35m[2024-09-29 16:40:24][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mSQL 서버 연결 성공, API 서비스 접속중...
+[0;39m[35m[2024-09-29 16:40:24][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mAPI 서비스 접속 성공, 봇 시작중... 각 기능부 실행
+[0;39m[35m[2024-09-29 16:41:10][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mStart up
+[0;39m[35m[2024-09-29 16:41:10][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mOS: windows 11
+[0;39m[35m[2024-09-29 16:41:10][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mprogram version: stable version
+[0;39m[35m[2024-09-29 16:41:10][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m기본 정보 로딩됨, SQL 서버에 접속 시도...
+[0;39m[35m[2024-09-29 16:41:15][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mSQL 서버 연결 성공, API 서비스 접속중...
+[0;39m[35m[2024-09-29 16:41:15][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mAPI 서비스 접속 성공, 봇 시작중... 각 기능부 실행
+[0;39m[35m[2024-09-29 16:41:15][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m디스코드 서버와 연결 준비 완료, 접속 시도중...
+[0;39m[35m[2024-09-29 16:41:16][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mLogin Successful!
+[0;39m[35m[2024-09-29 16:41:16][0;39m [32m[JDA MainWS-WriteThread][0;39m [34m[INFO ][0;39m [36mn.d.j.i.requests.WebSocketClient[0;39m - [1;35mConnected to WebSocket
+[0;39m[35m[2024-09-29 16:41:17][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mFinished Loading!
+[0;39m[35m[2024-09-29 16:41:17][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.OnReadyListener[0;39m - [1;35m자동화 처리부 시작 완료
+[0;39m[35m[2024-09-29 16:41:17][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.kirito5572.listener.EventListener[0;39m - [1;35m이벤트 처리부 시작 완료
+[0;39m[35m[2024-09-29 16:41:17][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.l.EmoteClickGiveRoleListener[0;39m - [1;35m규칙 동의 처리부 시작 완료
+[0;39m[35m[2024-09-29 16:41:17][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.FilterListener[0;39m - [1;35m 필터 기능부 준비 완료
+[0;39m[35m[2024-09-29 16:41:17][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.MessagePinListener[0;39m - [1;35m 메세지 고정 기능부 준비 완료
+[0;39m[35m[2024-09-29 16:41:17][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.GiveRoleListener[0;39m - [1;35m역할 지급 기능부 준비 완료
+[0;39m[35m[2024-09-29 16:41:17][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
+[0;39m[35m[2024-09-29 16:41:17][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 로딩중
+[0;39m[35m[2024-09-29 16:41:18][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 셋팅 완료
+[0;39m[35m[2024-09-29 16:41:18][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m연결 완료. 부팅 완료
+[0;39m[35m[2024-09-29 16:50:35][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mStart up
+[0;39m[35m[2024-09-29 16:50:35][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mOS: windows 11
+[0;39m[35m[2024-09-29 16:50:35][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mprogram version: stable version
+[0;39m[35m[2024-09-29 16:50:35][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m기본 정보 로딩됨, SQL 서버에 접속 시도...
+[0;39m[35m[2024-09-29 16:50:40][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mSQL 서버 연결 성공, API 서비스 접속중...
+[0;39m[35m[2024-09-29 16:50:40][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35mAPI 서비스 접속 성공, 봇 시작중... 각 기능부 실행
+[0;39m[35m[2024-09-29 16:50:40][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m디스코드 서버와 연결 준비 완료, 접속 시도중...
+[0;39m[35m[2024-09-29 16:50:41][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mLogin Successful!
+[0;39m[35m[2024-09-29 16:50:41][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mn.d.j.i.requests.WebSocketClient[0;39m - [1;35mConnected to WebSocket
+[0;39m[35m[2024-09-29 16:50:42][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mnet.dv8tion.jda.api.JDA[0;39m - [1;35mFinished Loading!
+[0;39m[35m[2024-09-29 16:50:42][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.OnReadyListener[0;39m - [1;35m자동화 처리부 시작 완료
+[0;39m[35m[2024-09-29 16:50:42][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.kirito5572.listener.EventListener[0;39m - [1;35m이벤트 처리부 시작 완료
+[0;39m[35m[2024-09-29 16:50:42][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.l.EmoteClickGiveRoleListener[0;39m - [1;35m규칙 동의 처리부 시작 완료
+[0;39m[35m[2024-09-29 16:50:42][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.FilterListener[0;39m - [1;35m 필터 기능부 준비 완료
+[0;39m[35m[2024-09-29 16:50:42][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.MessagePinListener[0;39m - [1;35m 메세지 고정 기능부 준비 완료
+[0;39m[35m[2024-09-29 16:50:42][0;39m [32m[JDA MainWS-ReadThread][0;39m [34m[INFO ][0;39m [36mm.k.listener.GiveRoleListener[0;39m - [1;35m역할 지급 기능부 준비 완료
+[0;39m[35m[2024-09-29 16:50:42][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
+[0;39m[35m[2024-09-29 16:50:42][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 로딩중
+[0;39m[35m[2024-09-29 16:50:43][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mm.k.objects.main.CommandManager[0;39m - [1;35m명령어 셋팅 완료
+[0;39m[35m[2024-09-29 16:50:43][0;39m [32m[main][0;39m [34m[INFO ][0;39m [36mme.kirito5572.App[0;39m - [1;35m연결 완료. 부팅 완료
+[0;39m[35m[2024-09-29 18:37:37][0;39m [32m[Timer-2][0;39m [1;31m[ERROR][0;39m [36mm.k.listener.OnReadyListener[0;39m - [1;35mCommunications link failure
+
+The last packet successfully received from the server was 4,999 milliseconds ago. The last packet sent successfully to the server was 4,999 milliseconds ago.
 [0;39m

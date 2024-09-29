@@ -23,8 +23,12 @@ public class MuteListener extends ListenerAdapter {
 
     @Override
     public void onGuildMemberJoin(@NotNull GuildMemberJoinEvent event) {
-        try (ResultSet resultSet = mySqlConnector.Select_Query("SELECT * FROM blitz_bot.MuteTable WHERE userId = ?",
-        new int[]{mySqlConnector.STRING}, new String[]{event.getMember().getId()})) {
+        MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+        queryData.query = "SELECT * FROM blitz_bot.MuteTable WHERE userId = ?";
+        queryData.dataType = new int[] {mySqlConnector.STRING};
+        queryData.data = new String[] {event.getMember().getId()};
+        try (ResultSet resultSet = mySqlConnector.Select_Query(queryData)) {
+            if(resultSet == null) return;
             if(resultSet.next()) {
                 long endTimeData;
                 Date date = new Date();

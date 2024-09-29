@@ -67,11 +67,13 @@ public class MessageBulkDeleteCommand implements ICommand {
 
     }
 
+    @NotNull
     @Override
     public String getHelp() {
         return "채팅을 대량으로 삭제시킵니다";
     }
 
+    @NotNull
     @Override
     public String getInvoke() {
         return "삭제";

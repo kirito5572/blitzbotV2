@@ -66,6 +66,7 @@ public class BotInfoCommand implements ICommand {
         return "봇에 대한 정보를 출력합니다.";
     }
 
+    @NotNull
     @Override
     public String getInvoke() {
         return "봇정보";

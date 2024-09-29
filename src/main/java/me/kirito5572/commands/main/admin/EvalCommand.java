@@ -96,11 +96,13 @@ public class EvalCommand implements ICommand {
         }
     }
 
+    @NotNull
     @Override
     public String getHelp() {
         return "개발용 실행형 명령어";
     }
 
+    @NotNull
     @Override
     public String getInvoke() {
         return "eval";

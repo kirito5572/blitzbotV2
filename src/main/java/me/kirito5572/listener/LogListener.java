@@ -43,6 +43,7 @@ import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.GetObjectRequest;
 import software.amazon.awssdk.services.s3.model.HeadObjectRequest;
+import software.amazon.awssdk.services.s3.model.NoSuchKeyException;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 
 import java.awt.*;
@@ -100,14 +101,11 @@ public class LogListener extends ListenerAdapter {
         if (!files.isEmpty()) {
             isFile = true;
         }
-
-        try {
-            mySqlConnector.Insert_Query("INSERT INTO blitz_bot.ChattingDataTable (messageId, userId, messageRaw, isFile) VALUES (?, ?, ?, ?)",
-                    new int[]{mySqlConnector.STRING, mySqlConnector.STRING, mySqlConnector.STRING, mySqlConnector.BOOLEAN},
-                    new String[]{message.getId(), message.getAuthor().getId(), message.getContentRaw(), String.valueOf(isFile)});
-        } catch (SQLException sqlException) {
-            logger.error(sqlException.getMessage());
-        }
+        MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+        queryData.query = "INSERT INTO blitz_bot.ChattingDataTable (messageId, userId, messageRaw, isFile) VALUES (?, ?, ?, ?)";
+        queryData.dataType = new int[]{mySqlConnector.STRING, mySqlConnector.STRING, mySqlConnector.STRING, mySqlConnector.BOOLEAN};
+        queryData.data = new String[]{message.getId(), message.getAuthor().getId(), message.getContentRaw(), String.valueOf(isFile)};
+        mySqlConnector.Insert_Query(queryData);
         if (isFile) {
             int i = 0;
             for (Message.Attachment attachment : files) {
@@ -165,33 +163,42 @@ public class LogListener extends ListenerAdapter {
         }
         EmbedBuilder embedBuilder = EmbedUtils.getDefaultEmbed();
         Date time = new Date();
-        try (ResultSet resultSet = mySqlConnector.Select_Query("SELECT * FROM blitz_bot.ChattingDataTable WHERE messageId=?",
-                new int[] {mySqlConnector.STRING},
-                new String[] {event.getMessageId()})){
+        MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+        queryData.query = "SELECT * FROM blitz_bot.ChattingDataTable WHERE messageId=?";
+        queryData.dataType = new int[]{mySqlConnector.STRING};
+        queryData.data = new String[]{event.getMessageId()};
+
+        try (ResultSet resultSet = mySqlConnector.Select_Query(queryData)){
             Member member = event.getMember();
             assert member != null;
             embedBuilder.setTitle("수정된 메세지")
                     .setColor(Color.ORANGE)
                     .setDescription("메세지 수정: " + event.getChannel().getAsMention() + "\n[메세지 이동](" + event.getMessage().getJumpUrl() + ")")
                     .addField("작성 채널", event.getChannel().getAsMention(), false);
-            if(resultSet.next()) {
-                String pastData = resultSet.getString("messageRaw");
-                String nowData = event.getMessage().getContentRaw();
-                if(pastData != null) {
-                    MessageBuilder(embedBuilder, pastData, "수정전 내용", null);
-                    MessageBuilder(embedBuilder, nowData,"수정후 내용", event.getMessageId());
-                }
-            } else {
+            if(resultSet == null) {
                 embedBuilder.addField("수정전 내용", "정보 없음", false);
                 MessageBuilder(embedBuilder, event.getMessage().getContentRaw(),"수정후 내용", null);
+            } else {
+                if (resultSet.next()) {
+                    String pastData = resultSet.getString("messageRaw");
+                    String nowData = event.getMessage().getContentRaw();
+                    if (pastData != null) {
+                        MessageBuilder(embedBuilder, pastData, "수정전 내용", null);
+                        MessageBuilder(embedBuilder, nowData, "수정후 내용", event.getMessageId());
+                    }
+                } else {
+                    embedBuilder.addField("수정전 내용", "정보 없음", false);
+                    MessageBuilder(embedBuilder, event.getMessage().getContentRaw(), "수정후 내용", null);
+                }
             }
             embedBuilder.addField("수정 시간", timeFormat.format(time), false)
                     .setFooter(member.getEffectiveName() + "(" + member.getEffectiveName() + ")", member.getUser().getAvatarUrl());
             Objects.requireNonNull(event.getGuild().getTextChannelById("829023428019355688")).sendMessageEmbeds(embedBuilder.build()).queue();
-
-            mySqlConnector.Insert_Query("UPDATE blitz_bot.ChattingDataTable SET messageRaw=? WHERE messageId=?",
-                    new int[] {mySqlConnector.STRING, mySqlConnector.STRING},
-                    new String[] {event.getMessage().getContentRaw(), event.getMessageId()});
+            MySqlConnector.QueryData queryData2 = new MySqlConnector.QueryData();
+            queryData2.query = "UPDATE blitz_bot.ChattingDataTable SET messageRaw=? WHERE messageId=?";
+            queryData2.dataType = new int[] {mySqlConnector.STRING, mySqlConnector.STRING};
+            queryData2.data = new String[] {event.getMessage().getContentRaw(), event.getMessageId()};
+            mySqlConnector.Insert_Query(queryData2);
         } catch (Exception e) {
             logger.error(e.getMessage());
         }
@@ -207,40 +214,56 @@ public class LogListener extends ListenerAdapter {
         }
         EmbedBuilder embedBuilder = EmbedUtils.getDefaultEmbed();
         Date time = new Date();
-        try (ResultSet resultSet = mySqlConnector.Select_Query("SELECT * FROM blitz_bot.ChattingDataTable WHERE messageId=?;",
-                new int[] {mySqlConnector.STRING}, new String[] {event.getMessageId()})) {
+        MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+        queryData.query = "SELECT * FROM blitz_bot.ChattingDataTable WHERE messageId=?;";
+        queryData.dataType = new int[] {mySqlConnector.STRING};
+        queryData.data = new String[] {event.getMessageId()};
+        try (ResultSet resultSet = mySqlConnector.Select_Query(queryData)) {
             embedBuilder.setTitle("삭제된 메세지")
                     .setColor(Color.RED);
             boolean isFile = false;
-            if(resultSet.next()) {
-                isFile = resultSet.getBoolean("isFile");
-                Member member = event.getGuild().getMemberById(resultSet.getString("userId"));
-                if(member != null) {
-                    embedBuilder.setFooter(member.getEffectiveName() + "(" + member.getEffectiveName() + ")", member.getUser().getAvatarUrl());
-                } else {
-                    embedBuilder.setFooter("알수 없는 유저");
-                }
-                if(isFile) {
-                    embedBuilder.appendDescription("이미지가 포함된 게시글");
-                }
-                embedBuilder.addField("작성 채널", event.getChannel().getAsMention(), false);
-                String messageRaw = resultSet.getString("messageRaw");
-                if(resultSet.getString("messageRaw").isEmpty()) {
-                    embedBuilder.addField("삭제된 내용", "내용이 없이 사진만 있는 메세지", false);
-                } else {
-                    MessageBuilder(embedBuilder, messageRaw,"삭제된 내용", event.getMessageId());
-                }
-            } else {
+            if(resultSet == null) {
                 embedBuilder.addField("데이터 없음", "데이터 없음", false);
+            } else {
+                if(resultSet.next()) {
+                    isFile = resultSet.getBoolean("isFile");
+                    Member member = event.getGuild().getMemberById(resultSet.getString("userId"));
+                    if(member != null) {
+                        embedBuilder.setFooter(member.getEffectiveName() + "(" + member.getEffectiveName() + ")", member.getUser().getAvatarUrl());
+                    } else {
+                        embedBuilder.setFooter("알수 없는 유저");
+                    }
+                    if(isFile) {
+                        embedBuilder.appendDescription("이미지가 포함된 게시글");
+                    }
+                    embedBuilder.addField("작성 채널", event.getChannel().getAsMention(), false);
+                    String messageRaw = resultSet.getString("messageRaw");
+                    if(resultSet.getString("messageRaw").isEmpty()) {
+                        embedBuilder.addField("삭제된 내용", "내용이 없이 사진만 있는 메세지", false);
+                    } else {
+                        MessageBuilder(embedBuilder, messageRaw,"삭제된 내용", event.getMessageId());
+                    }
+                } else {
+                    embedBuilder.addField("데이터 없음", "데이터 없음", false);
+                }
             }
             File file = null;
             embedBuilder.addField("삭제 시간", timeFormat.format(time), false);
             if(isFile) {
                  file = S3DownloadObject(event.getMessageId() + "_" + 1);
-                Objects.requireNonNull(event.getGuild().getTextChannelById("829023428019355688")).sendFiles(FileUpload.fromData(file)).queue();
+                 if(file != null) {
+                     Objects.requireNonNull(event.getGuild().getTextChannelById("829023428019355688")).sendFiles(FileUpload.fromData(file)).queue();
+                 } else {
+                     Objects.requireNonNull(event.getGuild().getTextChannelById("829023428019355688")).sendMessage("파일이 존재하지 않습니다.").queue();
+                 }
+
             }
             Objects.requireNonNull(event.getGuild().getTextChannelById("829023428019355688")).sendMessageEmbeds(embedBuilder.build()).queue();
-            mySqlConnector.Insert_Query("DELETE FROM blitz_bot.ChattingDataTable WHERE messageId=?", new int[] {mySqlConnector.STRING}, new String[] {event.getMessageId()});
+            MySqlConnector.QueryData queryData2 = new MySqlConnector.QueryData();
+            queryData2.query = "DELETE FROM blitz_bot.ChattingDataTable WHERE messageId=?";
+            queryData2.dataType = new int[] {mySqlConnector.STRING};
+            queryData2.data = new String[] {event.getMessageId()};
+            mySqlConnector.Insert_Query(queryData2);
             if(file !=null) {
                 if (file.exists()) {
                     if (!file.delete()) {
@@ -682,7 +705,7 @@ public class LogListener extends ListenerAdapter {
      */
 
     private File S3DownloadObject(@NotNull String messageId) {
-        try(S3Client s3Client = S3Client.builder()
+        try (S3Client s3Client = S3Client.builder()
                 .credentialsProvider(DefaultCredentialsProvider.create())
                 .region(clientRegion)
                 .build()) {
@@ -699,6 +722,10 @@ public class LogListener extends ListenerAdapter {
             path = Paths.get(messageId + "." + type.split("/")[1]);
             s3Client.getObject(getObjectRequest, path);
             return path.toFile();
+        } catch (NoSuchKeyException noSuchKeyException) {
+            logger.error("S3 Bucket에 다운로드할 파일이 존재하지 않습니다.");
+            noSuchKeyException.fillInStackTrace();
+            return null;
         }
     }
 

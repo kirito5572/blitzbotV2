@@ -1,0 +1,315 @@
+[2024-09-19 01:31:01] [main] [INFO ] me.kirito5572.App - Start up
+[2024-09-19 01:31:01] [main] [INFO ] me.kirito5572.App - OS: windows 11
+[2024-09-19 01:31:01] [main] [ERROR] me.kirito5572.App - alpha program version: alpha version
+[2024-09-19 01:31:02] [main] [INFO ] me.kirito5572.App - 기본 정보 로딩됨, SQL 서버에 접속 시도...
+[2024-09-19 01:31:02] [main] [INFO ] me.kirito5572.App - SQL 서버 연결 성공, API 서비스 접속중...
+[2024-09-19 01:31:02] [main] [INFO ] me.kirito5572.App - API 서비스 접속 성공, 봇 시작중... 각 기능부 실행
+[2024-09-19 01:31:02] [main] [INFO ] me.kirito5572.App - 디스코드 서버와 연결 준비 완료, 접속 시도중...
+[2024-09-19 01:31:03] [main] [INFO ] net.dv8tion.jda.api.JDA - Login Successful!
+[2024-09-19 01:31:03] [JDA MainWS-ReadThread] [INFO ] n.d.j.i.requests.WebSocketClient - Connected to WebSocket
+[2024-09-19 01:31:03] [JDA MainWS-ReadThread] [INFO ] net.dv8tion.jda.api.JDA - Finished Loading!
+[2024-09-19 01:31:04] [JDA MainWS-ReadThread] [INFO ] m.k.listener.OnReadyListener - 자동화 처리부 시작 완료
+[2024-09-19 01:31:04] [JDA MainWS-ReadThread] [INFO ] m.kirito5572.listener.EventListener - 이벤트 처리부 시작 완료
+[2024-09-19 01:31:04] [JDA MainWS-ReadThread] [INFO ] m.k.l.EmoteClickGiveRoleListener - 규칙 동의 처리부 시작 완료
+[2024-09-19 01:31:04] [JDA MainWS-ReadThread] [INFO ] m.k.listener.FilterListener -  필터 기능부 준비 완료
+[2024-09-19 01:31:04] [JDA MainWS-ReadThread] [INFO ] m.k.listener.MessagePinListener -  메세지 고정 기능부 준비 완료
+[2024-09-19 01:31:04] [main] [INFO ] me.kirito5572.App - 서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
+[2024-09-19 01:31:04] [main] [INFO ] m.k.objects.main.CommandManager - 명령어 로딩중
+[2024-09-19 01:31:04] [main] [INFO ] m.k.objects.main.CommandManager - 명령어 셋팅 완료
+[2024-09-19 01:31:04] [main] [INFO ] me.kirito5572.App - 연결 완료. 부팅 완료
+[2024-09-19 01:32:05] [main] [INFO ] me.kirito5572.App - Start up
+[2024-09-19 01:32:05] [main] [INFO ] me.kirito5572.App - OS: windows 11
+[2024-09-19 01:32:05] [main] [ERROR] me.kirito5572.App - alpha program version: alpha version
+[2024-09-19 01:32:06] [main] [INFO ] me.kirito5572.App - 기본 정보 로딩됨, SQL 서버에 접속 시도...
+[2024-09-19 01:32:06] [main] [INFO ] me.kirito5572.App - SQL 서버 연결 성공, API 서비스 접속중...
+[2024-09-19 01:32:06] [main] [INFO ] me.kirito5572.App - API 서비스 접속 성공, 봇 시작중... 각 기능부 실행
+[2024-09-19 01:32:06] [main] [INFO ] me.kirito5572.App - 디스코드 서버와 연결 준비 완료, 접속 시도중...
+[2024-09-19 01:32:06] [main] [INFO ] net.dv8tion.jda.api.JDA - Login Successful!
+[2024-09-19 01:32:07] [JDA MainWS-WriteThread] [INFO ] n.d.j.i.requests.WebSocketClient - Connected to WebSocket
+[2024-09-19 01:32:07] [JDA MainWS-ReadThread] [INFO ] net.dv8tion.jda.api.JDA - Finished Loading!
+[2024-09-19 01:32:07] [JDA MainWS-ReadThread] [INFO ] m.k.listener.OnReadyListener - 자동화 처리부 시작 완료
+[2024-09-19 01:32:07] [JDA MainWS-ReadThread] [INFO ] m.kirito5572.listener.EventListener - 이벤트 처리부 시작 완료
+[2024-09-19 01:32:07] [JDA MainWS-ReadThread] [INFO ] m.k.l.EmoteClickGiveRoleListener - 규칙 동의 처리부 시작 완료
+[2024-09-19 01:32:07] [JDA MainWS-ReadThread] [INFO ] m.k.listener.FilterListener -  필터 기능부 준비 완료
+[2024-09-19 01:32:07] [JDA MainWS-ReadThread] [INFO ] m.k.listener.MessagePinListener -  메세지 고정 기능부 준비 완료
+[2024-09-19 01:32:07] [main] [INFO ] me.kirito5572.App - 서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
+[2024-09-19 01:32:07] [main] [INFO ] m.k.objects.main.CommandManager - 명령어 로딩중
+[2024-09-19 01:32:08] [main] [INFO ] m.k.objects.main.CommandManager - 명령어 셋팅 완료
+[2024-09-19 01:32:08] [main] [INFO ] me.kirito5572.App - 연결 완료. 부팅 완료
+[2024-09-19 01:38:16] [main] [INFO ] me.kirito5572.App - Start up
+[2024-09-19 01:38:16] [main] [INFO ] me.kirito5572.App - OS: windows 11
+[2024-09-19 01:38:16] [main] [ERROR] me.kirito5572.App - alpha program version: alpha version
+[2024-09-19 01:38:16] [main] [INFO ] me.kirito5572.App - 기본 정보 로딩됨, SQL 서버에 접속 시도...
+[2024-09-19 01:38:16] [main] [INFO ] me.kirito5572.App - SQL 서버 연결 성공, API 서비스 접속중...
+[2024-09-19 01:38:16] [main] [INFO ] me.kirito5572.App - API 서비스 접속 성공, 봇 시작중... 각 기능부 실행
+[2024-09-19 01:38:16] [main] [INFO ] me.kirito5572.App - 디스코드 서버와 연결 준비 완료, 접속 시도중...
+[2024-09-19 01:38:17] [main] [INFO ] net.dv8tion.jda.api.JDA - Login Successful!
+[2024-09-19 01:38:17] [JDA MainWS-ReadThread] [INFO ] n.d.j.i.requests.WebSocketClient - Connected to WebSocket
+[2024-09-19 01:38:18] [JDA MainWS-ReadThread] [INFO ] net.dv8tion.jda.api.JDA - Finished Loading!
+[2024-09-19 01:38:18] [JDA MainWS-ReadThread] [INFO ] m.k.listener.OnReadyListener - 자동화 처리부 시작 완료
+[2024-09-19 01:38:18] [JDA MainWS-ReadThread] [INFO ] m.kirito5572.listener.EventListener - 이벤트 처리부 시작 완료
+[2024-09-19 01:38:18] [JDA MainWS-ReadThread] [INFO ] m.k.l.EmoteClickGiveRoleListener - 규칙 동의 처리부 시작 완료
+[2024-09-19 01:38:18] [JDA MainWS-ReadThread] [INFO ] m.k.listener.FilterListener -  필터 기능부 준비 완료
+[2024-09-19 01:38:18] [JDA MainWS-ReadThread] [INFO ] m.k.listener.MessagePinListener -  메세지 고정 기능부 준비 완료
+[2024-09-19 01:38:18] [main] [INFO ] me.kirito5572.App - 서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
+[2024-09-19 01:38:18] [main] [INFO ] m.k.objects.main.CommandManager - 명령어 로딩중
+[2024-09-19 01:38:18] [main] [INFO ] m.k.objects.main.CommandManager - 명령어 셋팅 완료
+[2024-09-19 01:38:18] [main] [INFO ] me.kirito5572.App - 연결 완료. 부팅 완료
+[2024-09-19 01:39:48] [main] [INFO ] me.kirito5572.App - Start up
+[2024-09-19 01:39:48] [main] [INFO ] me.kirito5572.App - OS: windows 11
+[2024-09-19 01:39:48] [main] [ERROR] me.kirito5572.App - alpha program version: alpha version
+[2024-09-19 01:39:48] [main] [INFO ] me.kirito5572.App - 기본 정보 로딩됨, SQL 서버에 접속 시도...
+[2024-09-19 01:39:48] [main] [INFO ] me.kirito5572.App - SQL 서버 연결 성공, API 서비스 접속중...
+[2024-09-19 01:39:48] [main] [INFO ] me.kirito5572.App - API 서비스 접속 성공, 봇 시작중... 각 기능부 실행
+[2024-09-19 01:39:48] [main] [INFO ] me.kirito5572.App - 디스코드 서버와 연결 준비 완료, 접속 시도중...
+[2024-09-19 01:39:49] [main] [INFO ] net.dv8tion.jda.api.JDA - Login Successful!
+[2024-09-19 01:39:49] [JDA MainWS-WriteThread] [INFO ] n.d.j.i.requests.WebSocketClient - Connected to WebSocket
+[2024-09-19 01:39:49] [JDA MainWS-ReadThread] [INFO ] net.dv8tion.jda.api.JDA - Finished Loading!
+[2024-09-19 01:39:49] [JDA MainWS-ReadThread] [INFO ] m.k.listener.OnReadyListener - 자동화 처리부 시작 완료
+[2024-09-19 01:39:49] [JDA MainWS-ReadThread] [INFO ] m.kirito5572.listener.EventListener - 이벤트 처리부 시작 완료
+[2024-09-19 01:39:49] [JDA MainWS-ReadThread] [INFO ] m.k.l.EmoteClickGiveRoleListener - 규칙 동의 처리부 시작 완료
+[2024-09-19 01:39:49] [JDA MainWS-ReadThread] [INFO ] m.k.listener.FilterListener -  필터 기능부 준비 완료
+[2024-09-19 01:39:49] [JDA MainWS-ReadThread] [INFO ] m.k.listener.MessagePinListener -  메세지 고정 기능부 준비 완료
+[2024-09-19 01:39:49] [JDA MainWS-ReadThread] [INFO ] m.k.listener.GiveRoleListener - 역할 지급 기능부 준비 완료
+[2024-09-19 01:39:49] [main] [INFO ] me.kirito5572.App - 서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
+[2024-09-19 01:39:50] [main] [INFO ] m.k.objects.main.CommandManager - 명령어 로딩중
+[2024-09-19 01:39:50] [main] [INFO ] m.k.objects.main.CommandManager - 명령어 셋팅 완료
+[2024-09-19 01:39:50] [main] [INFO ] me.kirito5572.App - 연결 완료. 부팅 완료
+[2024-09-19 01:42:15] [main] [INFO ] me.kirito5572.App - Start up
+[2024-09-19 01:42:15] [main] [INFO ] me.kirito5572.App - OS: windows 11
+[2024-09-19 01:42:15] [main] [INFO ] me.kirito5572.App - program version: stable version
+[2024-09-19 01:42:15] [main] [INFO ] me.kirito5572.App - 기본 정보 로딩됨, SQL 서버에 접속 시도...
+[2024-09-19 01:42:15] [main] [INFO ] me.kirito5572.App - SQL 서버 연결 성공, API 서비스 접속중...
+[2024-09-19 01:42:15] [main] [INFO ] me.kirito5572.App - API 서비스 접속 성공, 봇 시작중... 각 기능부 실행
+[2024-09-19 01:42:15] [main] [INFO ] me.kirito5572.App - 디스코드 서버와 연결 준비 완료, 접속 시도중...
+[2024-09-19 01:42:16] [main] [INFO ] net.dv8tion.jda.api.JDA - Login Successful!
+[2024-09-19 01:42:16] [JDA MainWS-ReadThread] [INFO ] n.d.j.i.requests.WebSocketClient - Connected to WebSocket
+[2024-09-19 01:42:17] [JDA MainWS-ReadThread] [INFO ] net.dv8tion.jda.api.JDA - Finished Loading!
+[2024-09-19 01:42:17] [JDA MainWS-ReadThread] [INFO ] m.k.listener.OnReadyListener - 자동화 처리부 시작 완료
+[2024-09-19 01:42:17] [JDA MainWS-ReadThread] [INFO ] m.kirito5572.listener.EventListener - 이벤트 처리부 시작 완료
+[2024-09-19 01:42:17] [JDA MainWS-ReadThread] [INFO ] m.k.l.EmoteClickGiveRoleListener - 규칙 동의 처리부 시작 완료
+[2024-09-19 01:42:17] [JDA MainWS-ReadThread] [INFO ] m.k.listener.FilterListener -  필터 기능부 준비 완료
+[2024-09-19 01:42:17] [JDA MainWS-ReadThread] [INFO ] m.k.listener.MessagePinListener -  메세지 고정 기능부 준비 완료
+[2024-09-19 01:42:17] [JDA MainWS-ReadThread] [INFO ] m.k.listener.GiveRoleListener - 역할 지급 기능부 준비 완료
+[2024-09-19 01:42:17] [main] [INFO ] me.kirito5572.App - 서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
+[2024-09-19 01:42:18] [main] [INFO ] m.k.objects.main.CommandManager - 명령어 로딩중
+[2024-09-19 01:42:18] [main] [INFO ] m.k.objects.main.CommandManager - 명령어 셋팅 완료
+[2024-09-19 01:42:18] [main] [INFO ] me.kirito5572.App - 연결 완료. 부팅 완료
+[2024-09-19 01:42:39] [JDA MainWS-ReadThread] [ERROR] net.dv8tion.jda.api.JDA - One of the EventListeners had an uncaught exception
+java.lang.IllegalArgumentException: User may not be null
+	at net.dv8tion.jda.internal.utils.Checks.notNull(Checks.java:86) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.entities.GuildImpl.removeRoleFromMember(GuildImpl.java:1698) ~[JDA-5.1.0.jar:5.1.0]
+	at me.kirito5572.listener.GiveRoleListener.onMessageReactionRemove(GiveRoleListener.java:102) ~[classes/:na]
+	at net.dv8tion.jda.api.hooks.ListenerAdapter.onEvent(ListenerAdapter.java:455) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.api.hooks.InterfacedEventManager.handle(InterfacedEventManager.java:98) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handleInternally(EventManagerProxy.java:88) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handle(EventManagerProxy.java:70) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.JDAImpl.handleEvent(JDAImpl.java:169) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.handle.MessageReactionHandler.handleInternally(MessageReactionHandler.java:187) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.handle.SocketHandler.handle(SocketHandler.java:39) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onDispatch(WebSocketClient.java:1009) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onEvent(WebSocketClient.java:892) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.handleEvent(WebSocketClient.java:870) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onBinaryMessage(WebSocketClient.java:1048) ~[JDA-5.1.0.jar:5.1.0]
+	at com.neovisionaries.ws.client.ListenerManager.callOnBinaryMessage(ListenerManager.java:385) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.callOnBinaryMessage(ReadingThread.java:276) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.handleBinaryFrame(ReadingThread.java:996) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.handleFrame(ReadingThread.java:755) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.main(ReadingThread.java:108) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.runMain(ReadingThread.java:64) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.WebSocketThread.run(WebSocketThread.java:45) ~[nv-websocket-client-2.14.jar:na]
+[2024-09-19 01:44:28] [JDA MainWS-ReadThread] [ERROR] net.dv8tion.jda.api.JDA - One of the EventListeners had an uncaught exception
+java.lang.IllegalArgumentException: User may not be null
+	at net.dv8tion.jda.internal.utils.Checks.notNull(Checks.java:86) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.entities.GuildImpl.removeRoleFromMember(GuildImpl.java:1698) ~[JDA-5.1.0.jar:5.1.0]
+	at me.kirito5572.listener.GiveRoleListener.onMessageReactionRemove(GiveRoleListener.java:102) ~[classes/:na]
+	at net.dv8tion.jda.api.hooks.ListenerAdapter.onEvent(ListenerAdapter.java:455) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.api.hooks.InterfacedEventManager.handle(InterfacedEventManager.java:98) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handleInternally(EventManagerProxy.java:88) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handle(EventManagerProxy.java:70) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.JDAImpl.handleEvent(JDAImpl.java:169) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.handle.MessageReactionHandler.handleInternally(MessageReactionHandler.java:187) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.handle.SocketHandler.handle(SocketHandler.java:39) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onDispatch(WebSocketClient.java:1009) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onEvent(WebSocketClient.java:892) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.handleEvent(WebSocketClient.java:870) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onBinaryMessage(WebSocketClient.java:1048) ~[JDA-5.1.0.jar:5.1.0]
+	at com.neovisionaries.ws.client.ListenerManager.callOnBinaryMessage(ListenerManager.java:385) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.callOnBinaryMessage(ReadingThread.java:276) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.handleBinaryFrame(ReadingThread.java:996) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.handleFrame(ReadingThread.java:755) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.main(ReadingThread.java:108) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.runMain(ReadingThread.java:64) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.WebSocketThread.run(WebSocketThread.java:45) ~[nv-websocket-client-2.14.jar:na]
+[2024-09-19 01:44:57] [JDA MainWS-ReadThread] [ERROR] net.dv8tion.jda.api.JDA - One of the EventListeners had an uncaught exception
+java.lang.IllegalArgumentException: User may not be null
+	at net.dv8tion.jda.internal.utils.Checks.notNull(Checks.java:86) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.entities.GuildImpl.removeRoleFromMember(GuildImpl.java:1698) ~[JDA-5.1.0.jar:5.1.0]
+	at me.kirito5572.listener.GiveRoleListener.onMessageReactionRemove(GiveRoleListener.java:102) ~[classes/:na]
+	at net.dv8tion.jda.api.hooks.ListenerAdapter.onEvent(ListenerAdapter.java:455) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.api.hooks.InterfacedEventManager.handle(InterfacedEventManager.java:98) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handleInternally(EventManagerProxy.java:88) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handle(EventManagerProxy.java:70) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.JDAImpl.handleEvent(JDAImpl.java:169) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.handle.MessageReactionHandler.handleInternally(MessageReactionHandler.java:187) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.handle.SocketHandler.handle(SocketHandler.java:39) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onDispatch(WebSocketClient.java:1009) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onEvent(WebSocketClient.java:892) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.handleEvent(WebSocketClient.java:870) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onBinaryMessage(WebSocketClient.java:1048) ~[JDA-5.1.0.jar:5.1.0]
+	at com.neovisionaries.ws.client.ListenerManager.callOnBinaryMessage(ListenerManager.java:385) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.callOnBinaryMessage(ReadingThread.java:276) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.handleBinaryFrame(ReadingThread.java:996) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.handleFrame(ReadingThread.java:755) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.main(ReadingThread.java:108) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.runMain(ReadingThread.java:64) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.WebSocketThread.run(WebSocketThread.java:45) ~[nv-websocket-client-2.14.jar:na]
+[2024-09-19 01:45:34] [JDA MainWS-ReadThread] [ERROR] net.dv8tion.jda.api.JDA - One of the EventListeners had an uncaught exception
+java.lang.NullPointerException: Cannot invoke "net.dv8tion.jda.api.entities.Member.getId()" because "member" is null
+	at me.kirito5572.listener.GiveRoleListener.onMessageReactionRemove(GiveRoleListener.java:102) ~[classes/:na]
+	at net.dv8tion.jda.api.hooks.ListenerAdapter.onEvent(ListenerAdapter.java:455) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.api.hooks.InterfacedEventManager.handle(InterfacedEventManager.java:98) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handleInternally(EventManagerProxy.java:88) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handle(EventManagerProxy.java:70) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.JDAImpl.handleEvent(JDAImpl.java:169) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.handle.MessageReactionHandler.handleInternally(MessageReactionHandler.java:187) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.handle.SocketHandler.handle(SocketHandler.java:39) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onDispatch(WebSocketClient.java:1009) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onEvent(WebSocketClient.java:892) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.handleEvent(WebSocketClient.java:870) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onBinaryMessage(WebSocketClient.java:1048) ~[JDA-5.1.0.jar:5.1.0]
+	at com.neovisionaries.ws.client.ListenerManager.callOnBinaryMessage(ListenerManager.java:385) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.callOnBinaryMessage(ReadingThread.java:276) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.handleBinaryFrame(ReadingThread.java:996) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.handleFrame(ReadingThread.java:755) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.main(ReadingThread.java:108) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.runMain(ReadingThread.java:64) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.WebSocketThread.run(WebSocketThread.java:45) ~[nv-websocket-client-2.14.jar:na]
+[2024-09-19 01:46:55] [JDA MainWS-ReadThread] [ERROR] net.dv8tion.jda.api.JDA - One of the EventListeners had an uncaught exception
+java.lang.IllegalStateException: This message event did not happen in a guild
+	at net.dv8tion.jda.api.events.message.GenericMessageEvent.getGuild(GenericMessageEvent.java:162) ~[JDA-5.1.0.jar:5.1.0]
+	at me.kirito5572.listener.MessagePinListener.onMessageReceived(MessagePinListener.java:30) ~[classes/:na]
+	at net.dv8tion.jda.api.hooks.ListenerAdapter.onEvent(ListenerAdapter.java:455) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.api.hooks.InterfacedEventManager.handle(InterfacedEventManager.java:98) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handleInternally(EventManagerProxy.java:88) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handle(EventManagerProxy.java:70) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.JDAImpl.handleEvent(JDAImpl.java:169) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.handle.MessageCreateHandler.handleInternally(MessageCreateHandler.java:138) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.handle.SocketHandler.handle(SocketHandler.java:39) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onDispatch(WebSocketClient.java:1009) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onEvent(WebSocketClient.java:892) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.handleEvent(WebSocketClient.java:870) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onBinaryMessage(WebSocketClient.java:1048) ~[JDA-5.1.0.jar:5.1.0]
+	at com.neovisionaries.ws.client.ListenerManager.callOnBinaryMessage(ListenerManager.java:385) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.callOnBinaryMessage(ReadingThread.java:276) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.handleBinaryFrame(ReadingThread.java:996) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.handleFrame(ReadingThread.java:755) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.main(ReadingThread.java:108) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.runMain(ReadingThread.java:64) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.WebSocketThread.run(WebSocketThread.java:45) ~[nv-websocket-client-2.14.jar:na]
+[2024-09-19 01:47:08] [JDA MainWS-ReadThread] [ERROR] net.dv8tion.jda.api.JDA - One of the EventListeners had an uncaught exception
+java.lang.IllegalStateException: This message event did not happen in a guild
+	at net.dv8tion.jda.api.events.message.GenericMessageEvent.getGuild(GenericMessageEvent.java:162) ~[JDA-5.1.0.jar:5.1.0]
+	at me.kirito5572.listener.MessagePinListener.onMessageReceived(MessagePinListener.java:30) ~[classes/:na]
+	at net.dv8tion.jda.api.hooks.ListenerAdapter.onEvent(ListenerAdapter.java:455) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.api.hooks.InterfacedEventManager.handle(InterfacedEventManager.java:98) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handleInternally(EventManagerProxy.java:88) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handle(EventManagerProxy.java:70) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.JDAImpl.handleEvent(JDAImpl.java:169) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.handle.MessageCreateHandler.handleInternally(MessageCreateHandler.java:138) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.handle.SocketHandler.handle(SocketHandler.java:39) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onDispatch(WebSocketClient.java:1009) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onEvent(WebSocketClient.java:892) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.handleEvent(WebSocketClient.java:870) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onBinaryMessage(WebSocketClient.java:1048) ~[JDA-5.1.0.jar:5.1.0]
+	at com.neovisionaries.ws.client.ListenerManager.callOnBinaryMessage(ListenerManager.java:385) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.callOnBinaryMessage(ReadingThread.java:276) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.handleBinaryFrame(ReadingThread.java:996) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.handleFrame(ReadingThread.java:755) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.main(ReadingThread.java:108) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.runMain(ReadingThread.java:64) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.WebSocketThread.run(WebSocketThread.java:45) ~[nv-websocket-client-2.14.jar:na]
+[2024-09-19 01:49:50] [main] [INFO ] me.kirito5572.App - Start up
+[2024-09-19 01:49:50] [main] [INFO ] me.kirito5572.App - OS: windows 11
+[2024-09-19 01:49:50] [main] [INFO ] me.kirito5572.App - program version: stable version
+[2024-09-19 01:49:50] [main] [INFO ] me.kirito5572.App - 기본 정보 로딩됨, SQL 서버에 접속 시도...
+[2024-09-19 01:49:50] [main] [INFO ] me.kirito5572.App - SQL 서버 연결 성공, API 서비스 접속중...
+[2024-09-19 01:49:50] [main] [INFO ] me.kirito5572.App - API 서비스 접속 성공, 봇 시작중... 각 기능부 실행
+[2024-09-19 01:49:50] [main] [INFO ] me.kirito5572.App - 디스코드 서버와 연결 준비 완료, 접속 시도중...
+[2024-09-19 01:49:51] [main] [INFO ] net.dv8tion.jda.api.JDA - Login Successful!
+[2024-09-19 01:49:51] [JDA MainWS-ReadThread] [INFO ] n.d.j.i.requests.WebSocketClient - Connected to WebSocket
+[2024-09-19 01:49:52] [JDA MainWS-ReadThread] [INFO ] net.dv8tion.jda.api.JDA - Finished Loading!
+[2024-09-19 01:49:52] [JDA MainWS-ReadThread] [INFO ] m.k.listener.OnReadyListener - 자동화 처리부 시작 완료
+[2024-09-19 01:49:52] [JDA MainWS-ReadThread] [INFO ] m.kirito5572.listener.EventListener - 이벤트 처리부 시작 완료
+[2024-09-19 01:49:52] [JDA MainWS-ReadThread] [INFO ] m.k.l.EmoteClickGiveRoleListener - 규칙 동의 처리부 시작 완료
+[2024-09-19 01:49:52] [JDA MainWS-ReadThread] [INFO ] m.k.listener.FilterListener -  필터 기능부 준비 완료
+[2024-09-19 01:49:52] [JDA MainWS-ReadThread] [INFO ] m.k.listener.MessagePinListener -  메세지 고정 기능부 준비 완료
+[2024-09-19 01:49:52] [JDA MainWS-ReadThread] [INFO ] m.k.listener.GiveRoleListener - 역할 지급 기능부 준비 완료
+[2024-09-19 01:49:52] [main] [INFO ] me.kirito5572.App - 서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
+[2024-09-19 01:49:53] [main] [INFO ] m.k.objects.main.CommandManager - 명령어 로딩중
+[2024-09-19 01:49:53] [main] [INFO ] m.k.objects.main.CommandManager - 명령어 셋팅 완료
+[2024-09-19 01:49:53] [main] [INFO ] me.kirito5572.App - 연결 완료. 부팅 완료
+[2024-09-19 01:49:59] [JDA MainWS-ReadThread] [ERROR] net.dv8tion.jda.api.JDA - One of the EventListeners had an uncaught exception
+java.lang.IllegalStateException: This message event did not happen in a guild
+	at net.dv8tion.jda.api.events.message.GenericMessageEvent.getGuild(GenericMessageEvent.java:162) ~[JDA-5.1.0.jar:5.1.0]
+	at me.kirito5572.listener.MessagePinListener.onMessageReceived(MessagePinListener.java:30) ~[classes/:na]
+	at net.dv8tion.jda.api.hooks.ListenerAdapter.onEvent(ListenerAdapter.java:455) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.api.hooks.InterfacedEventManager.handle(InterfacedEventManager.java:98) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handleInternally(EventManagerProxy.java:88) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handle(EventManagerProxy.java:70) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.JDAImpl.handleEvent(JDAImpl.java:169) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.handle.MessageCreateHandler.handleInternally(MessageCreateHandler.java:138) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.handle.SocketHandler.handle(SocketHandler.java:39) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onDispatch(WebSocketClient.java:1009) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onEvent(WebSocketClient.java:892) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.handleEvent(WebSocketClient.java:870) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onBinaryMessage(WebSocketClient.java:1048) ~[JDA-5.1.0.jar:5.1.0]
+	at com.neovisionaries.ws.client.ListenerManager.callOnBinaryMessage(ListenerManager.java:385) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.callOnBinaryMessage(ReadingThread.java:276) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.handleBinaryFrame(ReadingThread.java:996) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.handleFrame(ReadingThread.java:755) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.main(ReadingThread.java:108) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.runMain(ReadingThread.java:64) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.WebSocketThread.run(WebSocketThread.java:45) ~[nv-websocket-client-2.14.jar:na]
+[2024-09-19 01:49:59] [JDA MainWS-ReadThread] [ERROR] net.dv8tion.jda.api.JDA - One of the EventListeners had an uncaught exception
+java.lang.IllegalStateException: This message event did not happen in a guild
+	at net.dv8tion.jda.api.events.message.GenericMessageEvent.getGuild(GenericMessageEvent.java:162) ~[JDA-5.1.0.jar:5.1.0]
+	at me.kirito5572.listener.MessagePinListener.onMessageReceived(MessagePinListener.java:30) ~[classes/:na]
+	at net.dv8tion.jda.api.hooks.ListenerAdapter.onEvent(ListenerAdapter.java:455) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.api.hooks.InterfacedEventManager.handle(InterfacedEventManager.java:98) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handleInternally(EventManagerProxy.java:88) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.hooks.EventManagerProxy.handle(EventManagerProxy.java:70) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.JDAImpl.handleEvent(JDAImpl.java:169) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.handle.MessageCreateHandler.handleInternally(MessageCreateHandler.java:138) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.handle.SocketHandler.handle(SocketHandler.java:39) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onDispatch(WebSocketClient.java:1009) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onEvent(WebSocketClient.java:892) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.handleEvent(WebSocketClient.java:870) ~[JDA-5.1.0.jar:5.1.0]
+	at net.dv8tion.jda.internal.requests.WebSocketClient.onBinaryMessage(WebSocketClient.java:1048) ~[JDA-5.1.0.jar:5.1.0]
+	at com.neovisionaries.ws.client.ListenerManager.callOnBinaryMessage(ListenerManager.java:385) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.callOnBinaryMessage(ReadingThread.java:276) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.handleBinaryFrame(ReadingThread.java:996) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.handleFrame(ReadingThread.java:755) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.main(ReadingThread.java:108) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.ReadingThread.runMain(ReadingThread.java:64) ~[nv-websocket-client-2.14.jar:na]
+	at com.neovisionaries.ws.client.WebSocketThread.run(WebSocketThread.java:45) ~[nv-websocket-client-2.14.jar:na]
+[2024-09-19 01:51:59] [main] [INFO ] me.kirito5572.App - Start up
+[2024-09-19 01:51:59] [main] [INFO ] me.kirito5572.App - OS: windows 11
+[2024-09-19 01:51:59] [main] [INFO ] me.kirito5572.App - program version: stable version
+[2024-09-19 01:51:59] [main] [INFO ] me.kirito5572.App - 기본 정보 로딩됨, SQL 서버에 접속 시도...
+[2024-09-19 01:51:59] [main] [INFO ] me.kirito5572.App - SQL 서버 연결 성공, API 서비스 접속중...
+[2024-09-19 01:51:59] [main] [INFO ] me.kirito5572.App - API 서비스 접속 성공, 봇 시작중... 각 기능부 실행
+[2024-09-19 01:51:59] [main] [INFO ] me.kirito5572.App - 디스코드 서버와 연결 준비 완료, 접속 시도중...
+[2024-09-19 01:52:00] [main] [INFO ] net.dv8tion.jda.api.JDA - Login Successful!
+[2024-09-19 01:52:00] [JDA MainWS-ReadThread] [INFO ] n.d.j.i.requests.WebSocketClient - Connected to WebSocket
+[2024-09-19 01:52:01] [JDA MainWS-ReadThread] [INFO ] net.dv8tion.jda.api.JDA - Finished Loading!
+[2024-09-19 01:52:01] [JDA MainWS-ReadThread] [INFO ] m.k.listener.OnReadyListener - 자동화 처리부 시작 완료
+[2024-09-19 01:52:01] [JDA MainWS-ReadThread] [INFO ] m.kirito5572.listener.EventListener - 이벤트 처리부 시작 완료
+[2024-09-19 01:52:01] [JDA MainWS-ReadThread] [INFO ] m.k.l.EmoteClickGiveRoleListener - 규칙 동의 처리부 시작 완료
+[2024-09-19 01:52:01] [JDA MainWS-ReadThread] [INFO ] m.k.listener.FilterListener -  필터 기능부 준비 완료
+[2024-09-19 01:52:01] [JDA MainWS-ReadThread] [INFO ] m.k.listener.MessagePinListener -  메세지 고정 기능부 준비 완료
+[2024-09-19 01:52:01] [JDA MainWS-ReadThread] [INFO ] m.k.listener.GiveRoleListener - 역할 지급 기능부 준비 완료
+[2024-09-19 01:52:01] [main] [INFO ] me.kirito5572.App - 서버와 연결 완료, 명령어 처리부 서버와 연결 시작...
+[2024-09-19 01:52:02] [main] [INFO ] m.k.objects.main.CommandManager - 명령어 로딩중
+[2024-09-19 01:52:02] [main] [INFO ] m.k.objects.main.CommandManager - 명령어 셋팅 완료
+[2024-09-19 01:52:02] [main] [INFO ] me.kirito5572.App - 연결 완료. 부팅 완료

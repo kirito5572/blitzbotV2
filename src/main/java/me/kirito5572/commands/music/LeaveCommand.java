@@ -43,11 +43,13 @@ public class LeaveCommand implements ICommand {
     }
 
     /** @noinspection unused*/
+    @NotNull
     @Override
     public String getHelp() {
         return "노래를 정지하고 나갑니다";
     }
     
+    @NotNull
     @Override
     public String getInvoke() {
         return "퇴장";

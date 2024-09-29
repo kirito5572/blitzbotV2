@@ -70,13 +70,11 @@ public class GiveRoleListener extends ListenerAdapter {
         }
         assert role != null;
         guild.addRoleToMember(UserSnowflake.fromId(member.getId()), role).queue();
-        try {
-            mySqlConnector.Insert_Query("INSERT INTO blitz_bot.JoinDataTable (userId, approveTime, rejectTime) VALUES(?, ? ,?);",
-                    new int[] {mySqlConnector.STRING, mySqlConnector.STRING, mySqlConnector.STRING},
-                    new String[] {member.getId(), String.valueOf(System.currentTimeMillis() / 1000), "0"});
-        } catch (SQLException sqlException) {
-            logger.error(sqlException.getMessage());
-        }
+        MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+        queryData.query = "INSERT INTO blitz_bot.JoinDataTable (userId, approveTime, rejectTime) VALUES(?, ? ,?);";
+        queryData.dataType = new int[]{mySqlConnector.STRING, mySqlConnector.STRING, mySqlConnector.STRING};
+        queryData.data = new String[]{member.getId(), String.valueOf(System.currentTimeMillis() / 1000), "0"};
+        mySqlConnector.Insert_Query(queryData);
     }
 
     @NotNull
@@ -100,13 +98,11 @@ public class GiveRoleListener extends ListenerAdapter {
                 assert role != null;
                 assert member != null;
                 guild.removeRoleFromMember(UserSnowflake.fromId(member.getId()), role).queue();
-                try {
-                     mySqlConnector.Insert_Query("UPDATE blitz_bot.JoinDataTable SET rejectTime =? WHERE userId = ? AND rejectTime = ?",
-                            new int[] {mySqlConnector.STRING, mySqlConnector.STRING, mySqlConnector.STRING},
-                            new String[] {String.valueOf(System.currentTimeMillis() / 1000), member.getId(), "0"});
-                } catch (SQLException sqlException) {
-                    logger.error(sqlException.getMessage());
-                }
+                MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+                queryData.query = "UPDATE blitz_bot.JoinDataTable SET rejectTime =? WHERE userId = ? AND rejectTime = ?";
+                queryData.dataType = new int[]{mySqlConnector.STRING, mySqlConnector.STRING, mySqlConnector.STRING};
+                queryData.data = new String[]{String.valueOf(System.currentTimeMillis() / 1000), member.getId(), "0"};
+                mySqlConnector.Insert_Query(queryData);
             }
         }
     }
@@ -118,13 +114,11 @@ public class GiveRoleListener extends ListenerAdapter {
             Member member = event.getMember();
             String id;
             id = Objects.requireNonNullElseGet(member, event::getUser).getId();
-            try {
-                mySqlConnector.Insert_Query("UPDATE blitz_bot.JoinDataTable SET rejectTime =? WHERE userId = ? AND rejectTime = ?",
-                        new int[]{mySqlConnector.STRING, mySqlConnector.STRING, mySqlConnector.STRING},
-                        new String[] {String.valueOf(System.currentTimeMillis() / 1000),  id, "1"});
-            } catch (SQLException sqlException) {
-                logger.error(sqlException.getMessage());
-            }
+            MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+            queryData.query = "UPDATE blitz_bot.JoinDataTable SET rejectTime =? WHERE userId = ? AND rejectTime = ?";
+            queryData.dataType = new int[]{mySqlConnector.STRING, mySqlConnector.STRING, mySqlConnector.STRING};
+            queryData.data = new String[]{String.valueOf(System.currentTimeMillis() / 1000),  id, "1"};
+            mySqlConnector.Insert_Query(queryData);
         }
     }
 
@@ -148,18 +142,25 @@ public class GiveRoleListener extends ListenerAdapter {
         check_time[1][2] = 6*hour;
         check_time[2][2] = 7*day;
         for(int i = 0; i < 4; i++) {
-            try (ResultSet resultSet = mySqlConnector.Select_Query("SELECT COUNT(*) FROM blitz_bot.JoinDataTable where approveTime > ? AND approveTime < ? AND userId = ?;;",
-                    new int[]{mySqlConnector.STRING, mySqlConnector.STRING, mySqlConnector.STRING},
-                    new String[]{String.valueOf(time - check_time[i][0]), String.valueOf(time), member.getId()})) {
+            MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+            queryData.query = "SELECT COUNT(*) FROM blitz_bot.JoinDataTable where approveTime > ? AND approveTime < ? AND userId = ?;";
+            queryData.dataType = new int[]{mySqlConnector.STRING, mySqlConnector.STRING, mySqlConnector.STRING};
+            queryData.data = new String[]{String.valueOf(time - check_time[i][0]), String.valueOf(time), member.getId()};
+            try (ResultSet resultSet = mySqlConnector.Select_Query(queryData)) {
+                if(resultSet == null) {
+                    return "error";
+                }
                 resultSet.next();
                 if (resultSet.getInt(1) >= check_time[i][1]) {
                     if(i == 3) {
                         return "ban";
                     }
                     long end_time = (System.currentTimeMillis() / 1000) + check_time[i][2];
-                    mySqlConnector.Insert_Query("INSERT INTO blitz_bot.GiveRoleBanTable (userId, endTime) VALUES(?,?);",
-                            new int[]{mySqlConnector.STRING, mySqlConnector.STRING},
-                            new String[]{member.getId(), String.valueOf(end_time)});
+                    MySqlConnector.QueryData queryData2 = new MySqlConnector.QueryData();
+                    queryData2.query = "INSERT INTO blitz_bot.GiveRoleBanTable (userId, endTime) VALUES(?,?);";
+                    queryData2.dataType = new int[]{mySqlConnector.STRING, mySqlConnector.STRING};
+                    queryData2.data = new String[]{member.getId(), String.valueOf(end_time)};
+                    mySqlConnector.Insert_Query(queryData2);
                     return "true/" + check_time[i][0] + "#" + check_time[i][1];
                 }
             } catch (SQLException sqlException) {
@@ -181,9 +182,14 @@ public class GiveRoleListener extends ListenerAdapter {
      */
 
     private long isBan(@NotNull Member member) {
-        try (ResultSet resultSet = mySqlConnector.Select_Query("SELECT * FROM blitz_bot.GiveRoleBanTable where userId = ?;",
-                    new int[]{mySqlConnector.STRING},
-                    new String[]{member.getId()})) {
+        MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+        queryData.query = "SELECT * FROM blitz_bot.GiveRoleBanTable where userId = ?;";
+        queryData.dataType = new int[]{mySqlConnector.STRING};
+        queryData.data = new String[]{member.getId()};
+        try (ResultSet resultSet = mySqlConnector.Select_Query(queryData)) {
+            if(resultSet == null) {
+                return 0;
+            }
             if (resultSet.next()) {
                 return resultSet.getLong("endTime");
             }

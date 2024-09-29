@@ -7,8 +7,8 @@ public interface ICommand {
 
     void handle(@NotNull SlashCommandInteractionEvent event);
 
-    String getHelp();
+    @NotNull String getHelp();
 
-    String getInvoke();
+    @NotNull String getInvoke();
 
 }

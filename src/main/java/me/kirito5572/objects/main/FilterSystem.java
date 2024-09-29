@@ -16,10 +16,10 @@ public class FilterSystem {
     private final Logger logger = LoggerFactory.getLogger(FilterSystem.class);
     private final List<String> filterList = new ArrayList<>();
     private final List<String[]> whiteFilterList = new ArrayList<>();
-    private final MySqlConnector mySQLConnector;
+    private final MySqlConnector mySqlConnector;
 
-    public FilterSystem(MySqlConnector mySQLConnector) {
-        this.mySQLConnector = mySQLConnector;
+    public FilterSystem(MySqlConnector mySqlConnector) {
+        this.mySqlConnector = mySqlConnector;
     }
 
 
@@ -29,12 +29,16 @@ public class FilterSystem {
      */
     public boolean filterRefresh() {
         boolean isRefreshEnd = false;
-        try (ResultSet resultSet = mySQLConnector.Select_Query(
-                "SELECT * FROM blitz_bot.filterWord;",
-                new int[]{},
-                new String[]{})) {
+        MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+        queryData.query = "SELECT * FROM blitz_bot.filterWord;";
+        queryData.dataType = new int[] {};
+        queryData.data = new String[] {};
+        try (ResultSet resultSet = mySqlConnector.Select_Query(queryData)) {
             filterList.clear();
             isRefreshEnd = true;
+            if(resultSet == null) {
+                return false;
+            }
             while(resultSet.next()) {
                 filterList.add(resultSet.getString("Word"));
             }
@@ -53,12 +57,16 @@ public class FilterSystem {
 
     public boolean whiteFilterRefresh() {
         boolean isRefreshEnd = false;
-        try (ResultSet resultSet = mySQLConnector.Select_Query(
-                "SELECT * FROM blitz_bot.whiteListWord;",
-                new int[]{},
-                new String[]{})) {
+        MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+        queryData.query = "SELECT * FROM blitz_bot.whiteListWord;";
+        queryData.dataType = new int[] {};
+        queryData.data = new String[] {};
+        try (ResultSet resultSet = mySqlConnector.Select_Query(queryData)) {
             whiteFilterList.clear();
             isRefreshEnd = true;
+            if(resultSet == null) {
+                return false;
+            }
             while(resultSet.next()) {
                 String[] data = new String[2];
                 data[0] = resultSet.getString("FilterWord");
@@ -74,31 +82,39 @@ public class FilterSystem {
         return isRefreshEnd;
     }
 
-    public void wordUpdate(boolean isWhiteList, boolean isInsert, String[] word) throws SQLException {
+    public void wordUpdate(boolean isWhiteList, boolean isInsert, String[] word) {
         if(isInsert) {
             //INSERT WORD
             if(isWhiteList) {
-                mySQLConnector.Insert_Query("INSERT INTO blitz_bot.whiteListWord (FilterWord, Word)VALUES (?, ?);",
-                        new int[]{mySQLConnector.STRING, mySQLConnector.STRING},
-                        new String[]{word[0], word[1]});
+                MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+                queryData.query = "INSERT INTO blitz_bot.whiteListWord (FilterWord, Word)VALUES (?, ?);";
+                queryData.dataType = new int[] {mySqlConnector.STRING, mySqlConnector.STRING};
+                queryData.data = new String[] {word[0], word[1]};
+                mySqlConnector.Insert_Query(queryData);
                 whiteFilterList.add(word);
             } else {
-                mySQLConnector.Insert_Query("INSERT INTO blitz_bot.filterWord (Word) VALUES (?);",
-                        new int[]{mySQLConnector.STRING},
-                        new String[]{word[0]});
+                MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+                queryData.query = "INSERT INTO blitz_bot.filterWord (Word) VALUES (?);";
+                queryData.dataType = new int[] {mySqlConnector.STRING};
+                queryData.data = new String[] {word[0]};
+                mySqlConnector.Insert_Query(queryData);
                 filterList.add(word[0]);
             }
         } else {
             //DELETE WORD
             if(isWhiteList) {
-                mySQLConnector.Insert_Query("DELETE FROM blitz_bot.whiteListWord WHERE FilterWord = ? AND Word = ?;",
-                        new int[]{mySQLConnector.STRING, mySQLConnector.STRING},
-                        new String[]{word[0], word[1]});
+                MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+                queryData.query = "DELETE FROM blitz_bot.whiteListWord WHERE FilterWord = ? AND Word = ?;";
+                queryData.dataType = new int[] {mySqlConnector.STRING, mySqlConnector.STRING};
+                queryData.data = new String[] {word[0], word[1]};
+                mySqlConnector.Insert_Query(queryData);
                 whiteFilterList.remove(word);
             } else {
-                mySQLConnector.Insert_Query("DELETE FROM blitz_bot.filterWord WHERE Word = ?;",
-                        new int[]{mySQLConnector.STRING},
-                        new String[]{word[0]});
+                MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+                queryData.query = "DELETE FROM blitz_bot.filterWord WHERE Word = ?;";
+                queryData.dataType = new int[] {mySqlConnector.STRING};
+                queryData.data = new String[] {word[0]};
+                mySqlConnector.Insert_Query(queryData);
                 filterList.remove(word[0]);
             }
         }

@@ -8,6 +8,7 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.entities.channel.middleman.GuildMessageChannel;
 import net.dv8tion.jda.api.events.session.ReadyEvent;
+import net.dv8tion.jda.api.events.session.SessionResumeEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.requests.restaction.MessageCreateAction;
 import net.dv8tion.jda.api.utils.AttachmentProxy;
@@ -33,6 +34,15 @@ public class OnReadyListener extends ListenerAdapter {
     }
 
     @Override
+    public void onSessionResume(@NotNull SessionResumeEvent event) {
+        try {
+            mySqlConnector.reConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
     public void onReady(@NotNull ReadyEvent event) {
         startUpGetData();
         if(App.appMode == App.APP_ALPHA) {
@@ -53,6 +63,13 @@ public class OnReadyListener extends ListenerAdapter {
                 public void run() {
                     giveRoleListenerModule();
                     autoTranslationDetector(event);
+                    try {
+                        if(mySqlConnector.isConnectionClosed()) {
+                            mySqlConnector.reConnection();
+                        }
+                    } catch (SQLException e) {
+                        e.fillInStackTrace();
+                    }
                     i[0]++;
                     if(i[0] > 21600) {
                         i[0] = 0;
@@ -109,7 +126,7 @@ public class OnReadyListener extends ListenerAdapter {
                 "671515746119188492", "671515746119188492", "671515746119188492"
         };
 
-        final String[] outputChannels = new String[] {
+        @SuppressWarnings("unused") final String[] outputChannels = new String[] {
                 "827040899174236171", "827040924722397216", "827040988488925185"
         };
 
@@ -149,15 +166,22 @@ public class OnReadyListener extends ListenerAdapter {
 
     private void giveRoleListenerModule() {
         long time = System.currentTimeMillis() / 1000;
-        try (ResultSet resultSet = mySqlConnector.Select_Query(
-                "SELECT * FROM blitz_bot.GiveRoleBanTable WHERE endTime < ?;",
-                new int[]{mySqlConnector.STRING}, new String[]{String.valueOf(time)})) {
-            while (resultSet.next()) {
-                mySqlConnector.Insert_Query(
-                        "DELETE FROM blitz_bot.GiveRoleBanTable WHERE userId = ?;",
-                        new int[] {mySqlConnector.STRING}, new String[]{resultSet.getString("userId")});
-            }
+        MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+        queryData.query = "SELECT * FROM blitz_bot.GiveRoleBanTable WHERE endTime < ?;";
+        queryData.dataType = new int[] {mySqlConnector.STRING};
+        queryData.data = new String[] {String.valueOf(time)};
 
+        try (ResultSet resultSet = mySqlConnector.Select_Query(queryData)) {
+            if(resultSet == null) {
+                return;
+            }
+            while (resultSet.next()) {
+                MySqlConnector.QueryData queryData2 = new MySqlConnector.QueryData();
+                queryData2.query = "DELETE FROM blitz_bot.GiveRoleBanTable WHERE userId = ?;";
+                queryData2.dataType = new int[] {mySqlConnector.STRING};
+                queryData2.data = new String[] {resultSet.getString("userId")};
+                mySqlConnector.Insert_Query(queryData2);
+            }
         } catch (SQLException sqlException) {
             sqlException.fillInStackTrace();
             try {
@@ -172,7 +196,14 @@ public class OnReadyListener extends ListenerAdapter {
 
     private boolean isLastMessageModule(String channelId, String messageId) {
         boolean value = false;
-        try(ResultSet rs = mySqlConnector.Select_Query("SELECT * FROM blitz_bot.isLastMessage WHERE channelId = ?", new int[]{mySqlConnector.STRING}, new String[] {channelId})) {
+        MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+        queryData.query = "SELECT * FROM blitz_bot.isLastMessage WHERE channelId = ?";
+        queryData.dataType = new int[] {mySqlConnector.STRING};
+        queryData.data = new String[] {channelId};
+        try(ResultSet rs = mySqlConnector.Select_Query(queryData)) {
+            if(rs == null) {
+                return true;
+            }
             rs.next();
             String lastedMessageId =rs.getString("messageId");
             if(lastedMessageId.equals(messageId)) {
@@ -185,11 +216,11 @@ public class OnReadyListener extends ListenerAdapter {
     }
 
     private void lastMessageChangeModule(String channelId, String messageId) {
-        try{
-            mySqlConnector.Insert_Query("UPDATE blitz_bot.isLastMessage SET messageId = ? WHERE channelId = ?", new int[]{mySqlConnector.STRING, mySqlConnector.STRING}, new String[] {messageId, channelId});
-        } catch (SQLException e) {
-            e.fillInStackTrace();
-        }
+        MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+        queryData.query = "UPDATE blitz_bot.isLastMessage SET messageId = ? WHERE channelId = ?";
+        queryData.dataType = new int[] {mySqlConnector.STRING, mySqlConnector.STRING};
+        queryData.data = new String[] {messageId, channelId};
+        mySqlConnector.Insert_Query(queryData);
     }
 
     private void messageCheckingModule(GuildMessageChannel input, GuildMessageChannel output) throws ExecutionException, InterruptedException {
@@ -222,7 +253,14 @@ public class OnReadyListener extends ListenerAdapter {
 
     private void startUpGetData() {
         List<String> complainData = new ArrayList<>();
-        try (ResultSet resultSet = mySqlConnector.Select_Query("SELECT * FROM blitz_bot.ComplainBan;", new int[]{}, new String[]{})) {
+        MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+        queryData.query = "SELECT * FROM blitz_bot.ComplainBan;";
+        queryData.dataType = new int[] {};
+        queryData.data = new String[] {};
+        try (ResultSet resultSet = mySqlConnector.Select_Query(queryData)) {
+            if(resultSet == null) {
+                return;
+            }
             while (resultSet.next()) {
                 complainData.add(resultSet.getString("userId"));
             }

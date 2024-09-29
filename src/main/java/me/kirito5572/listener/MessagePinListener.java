@@ -33,25 +33,34 @@ public class MessagePinListener extends ListenerAdapter {
         if(event.getAuthor().getId().equals(event.getGuild().getSelfMember().getId())) {
             return;
         }
-        try (ResultSet resultSet = mySqlConnector.Select_Query("SELECT * FROM blitz_bot.Pin WHERE channelId=?;", new int[]{mySqlConnector.STRING}, new String[]{event.getChannel().getId()})) {
+        MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+        queryData.query = "SELECT * FROM blitz_bot.Pin WHERE channelId=?;";
+        queryData.dataType = new int[] {mySqlConnector.STRING};
+        queryData.data = new String[] {event.getChannel().getId()};
+
+        try (ResultSet resultSet = mySqlConnector.Select_Query(queryData)) {
+            if(resultSet == null) {
+                return;
+            }
             if(resultSet.next()) {
                 try {
                     event.getChannel().retrieveMessageById(resultSet.getString("messageId")).queue(message -> {
                         MessageEmbed embed = message.getEmbeds().getFirst();
                         message.delete().queue();
                         event.getChannel().sendMessageEmbeds(embed).queue(message1 -> {
-                            try {
-                                mySqlConnector.Insert_Query("UPDATE blitz_bot.Pin SET messageId =? WHERE channelId = ?;",
-                                        new int[]{mySqlConnector.STRING, mySqlConnector.STRING},
-                                        new String[]{message1.getId(), event.getChannel().getId()});
-                            } catch (SQLException sqlException) {
-                                logger.error(sqlException.getMessage());
-                                sqlException.fillInStackTrace();
-                            }
+                            MySqlConnector.QueryData queryData2 = new MySqlConnector.QueryData();
+                            queryData2.query = "UPDATE blitz_bot.Pin SET messageId =? WHERE channelId = ?;";
+                            queryData2.dataType = new int[] {mySqlConnector.STRING, mySqlConnector.STRING};
+                            queryData2.data = new String[] {message1.getId(), event.getChannel().getId()};
+                            mySqlConnector.Insert_Query(queryData2);
                         });
                     });
                 } catch (ErrorResponseException e) {
-                    mySqlConnector.Insert_Query("DELETE FROM blitz_bot.Pin WHERE channelId=?", new int[]{mySqlConnector.STRING}, new String[]{event.getChannel().getId()});
+                    MySqlConnector.QueryData queryData2 = new MySqlConnector.QueryData();
+                    queryData2.query = "DELETE FROM blitz_bot.Pin WHERE channelId=?";
+                    queryData2.dataType = new int[] {mySqlConnector.STRING};
+                    queryData2.data = new String[] {event.getChannel().getId()};
+                    mySqlConnector.Insert_Query(queryData2);
                 }
             }
         } catch (Exception e) {

@@ -45,11 +45,13 @@ public class StopCommand implements ICommand {
     /**
      * @noinspection unused
      */
+    @NotNull
     @Override
     public String getHelp() {
         return "노래를 정지하고 봇이 나갑니다";
     }
 
+    @NotNull
     @Override
     public String getInvoke() {
         return "정지";

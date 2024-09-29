@@ -30,15 +30,18 @@ public class PingCommand implements ICommand {
         long b = event.getJDA().getGatewayPing();
         long Start = System.currentTimeMillis();
         long mysqlEnd = System.currentTimeMillis();
-        try (ResultSet ignored = mySqlConnector.Select_Query("SELECT * FROM blitz_bot.ComplainBan", new int[]{}, new String[]{})) {
+        MySqlConnector.QueryData queryData = new MySqlConnector.QueryData();
+        queryData.query = "SELECT * FROM blitz_bot.ComplainBan";
+        queryData.dataType = new int[] {};
+        queryData.data = new String[] {};
+        try (ResultSet ignored = mySqlConnector.Select_Query(queryData)) {
             mysqlEnd = System.currentTimeMillis();
-        } catch (SQLException e){
-            e.fillInStackTrace();
+        } catch (SQLException ignored){
         }
         String mysqlTimeString;
         long mysqlTime = (mysqlEnd - Start);
         if(mysqlTime < 0) {
-            mysqlTimeString = "접속 에러";
+            mysqlTimeString = "SQL 접속 에러";
         } else if(mysqlTime == 1 || mysqlTime == 0) {
             mysqlTimeString = "<1";
         } else {

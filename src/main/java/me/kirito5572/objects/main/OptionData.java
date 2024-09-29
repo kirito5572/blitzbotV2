@@ -7,7 +7,7 @@ public class OptionData {
     //ONLY AWS SQL SERVER data
     private static List<String> complainBanUserList = new ArrayList<>();
 
-    public static List<String> getComplainBanUserList() {
+    @SuppressWarnings("unused") public static List<String> getComplainBanUserList() {
         return complainBanUserList;
     }
 

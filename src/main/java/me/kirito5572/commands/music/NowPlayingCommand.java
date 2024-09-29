@@ -51,10 +51,12 @@ public class NowPlayingCommand implements ICommand {
     /**
      * @noinspection unused
      */
+    @NotNull
     public String getHelp() {
         return "현재 재생중인 음악목록을 알려줍니다.";
     }
 
+    @NotNull
     @Override
     public String getInvoke() {
         return "재생중";

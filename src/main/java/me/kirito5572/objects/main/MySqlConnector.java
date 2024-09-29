@@ -2,10 +2,11 @@ package me.kirito5572.objects.main;
 
 import org.intellij.lang.annotations.Language;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.sql.*;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 import static me.kirito5572.App.openFileData;
 
@@ -14,6 +15,7 @@ public class MySqlConnector {
     private static String url;
     private static String user;
     private static String password;
+    @SuppressWarnings("unused") private static final Queue<QueryData> queryData = new LinkedList<>();
 
     public final int STRING = 0;
     public final int INT = 1;
@@ -70,25 +72,22 @@ public class MySqlConnector {
         }
         try {
             connection = DriverManager.getConnection(url, user, password);
-        } catch (SQLException e) {
-            e.fillInStackTrace();
+        } catch (SQLException ignored) {
         }
     }
 
     /**
      * select query to sql server
-     * @param query sql query
-     * @param dataType the data types that input
-     * @param data the data that input
+     * @param queryData sql query data
      * @throws SQLException if query execution fail or database access error occurs
-     * @return {@link java.sql.ResultSet}
+     * @return {@link java.sql.ResultSet}, or
      */
-    public ResultSet Select_Query(@Language("MySQL") String query, int[] dataType, String[] data) throws SQLException {
+    public @Nullable ResultSet Select_Query(QueryData queryData) throws SQLException {
         if(connection.isClosed()) {
-            reConnection();
+            return null;
         }
-        PreparedStatement statement = connection.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        Query(statement, dataType, data);
+        @SuppressWarnings("SqlSourceToSinkFlow") PreparedStatement statement = connection.prepareStatement(queryData.query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        Query(statement, queryData.dataType, queryData.data);
         return statement.executeQuery();
     }
 
@@ -116,18 +115,30 @@ public class MySqlConnector {
     /**
      * insert query to sql server
      *
-     * @param Query    sql query
-     * @param dataType the data types that input
-     * @param data     the data that input
-     * @throws SQLException if query execution fail or database access error occurs
+     * @param queryData    sql query data
      */
-    public void Insert_Query(@Language("MySQL") String Query, int[] dataType, String[] data) throws SQLException {
-        if(connection.isClosed()) {
-            reConnection();
-        }
-        PreparedStatement statement = connection.prepareStatement(Query);
-        Query(statement, dataType, data);
-        boolean isEnd = statement.execute();
-        statement.close();
+    public void Insert_Query(QueryData queryData) {
+        new Thread(() -> {
+            while(true) {
+                try {
+                    if (!connection.isClosed()) break;
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (SQLException | InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            try(@SuppressWarnings("SqlSourceToSinkFlow") PreparedStatement statement = connection.prepareStatement(queryData.query)) {
+                Query(statement, queryData.dataType, queryData.data);
+                statement.execute();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }).start();
+    }
+
+    public static class QueryData {
+        public @Language("MySQL") String query;
+        public int[] dataType;
+        public String[] data;
     }
 }

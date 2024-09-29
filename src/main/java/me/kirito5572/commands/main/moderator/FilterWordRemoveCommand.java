@@ -28,14 +28,8 @@ public class FilterWordRemoveCommand implements ICommand {
             }
             boolean isSuccess = filterSystem.commandAuthorityCheck(event);
             if(isSuccess) {
-                try {
-                    filterSystem.wordUpdate(false, false, new String[]{opt.getAsString()});
-                    event.reply("단어 삭제가 완료되었습니다.").setEphemeral(true).queue();
-                } catch (SQLException sqlException) {
-                    logger.error(sqlException.getMessage());
-                    logger.error(sqlException.getSQLState());
-                    sqlException.fillInStackTrace();
-                }
+                filterSystem.wordUpdate(false, false, new String[]{opt.getAsString()});
+                event.reply("단어 삭제가 완료되었습니다.").setEphemeral(true).queue();
             }
         }
     }
@@ -45,6 +39,7 @@ public class FilterWordRemoveCommand implements ICommand {
         return "(관리자 전용) 필터링 단어 목록에서 단어를 삭제합니다.";
     }
 
+    @NotNull
     @Override
     public String getInvoke() {
         return "단어삭제";

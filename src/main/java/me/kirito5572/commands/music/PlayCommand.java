@@ -139,11 +139,13 @@ public class PlayCommand implements ICommand {
         }
     }
     
+    @NotNull
     @Override
     public String getHelp() {
         return "URL의 노래를 재생합니다";
     }
     
+    @NotNull
     @Override
     public String getInvoke() {
         return "재생";

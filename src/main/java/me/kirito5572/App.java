@@ -44,18 +44,6 @@ public class App {
     private static @NotNull String build_jdk = "";
     private static Date date;
 
-
-    private static final String[] moderator = new String[]{
-            //administrator
-            "241540160389382145",   //김증권#2950
-            //moderator
-            "321535660576210954",   //CHERRY_PICKER#9999
-            //contributor
-            "265095112789327872",   //nakdo#7495
-            //Wargaming(Game STAFF)
-            "651303118239432704"   //[WG]Summer#6183
-    };
-
     /**
      * open file.txt and get inside data
      * @param Data the name of open .txt file name
